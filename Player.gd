@@ -3,11 +3,15 @@ extends KinematicBody2D
 const GRAVITY = 50000
 const JUMP_BASE_STRENGTH = 75000
 const MIN_JUMP = 0.2
-const MAX_JUMP = 0.3
+const MAX_JUMP = 0.35
 const MOVEMENT_SPEED = 25000
 const FLOOR_FRICTION = 15000
 
+<<<<<<< Updated upstream
 var max_walk_speed = 10000
+=======
+const FALL_MULTIPLIER = 1.5
+>>>>>>> Stashed changes
 
 var velocity = Vector2()
 var was_on_floor = false
@@ -62,7 +66,7 @@ func _physics_process(delta):
 		
 	
 	else:
-		velocity.y += delta*GRAVITY
+		velocity.y += delta*GRAVITY*FALL_MULTIPLIER
 		
 	move_and_slide( velocity*delta, UP, false, 4, 5.0)
 
