@@ -6,12 +6,9 @@ const MIN_JUMP = 0.2
 const MAX_JUMP = 0.35
 const MOVEMENT_SPEED = 25000
 const FLOOR_FRICTION = 15000
-
-<<<<<<< Updated upstream
-var max_walk_speed = 10000
-=======
 const FALL_MULTIPLIER = 1.5
->>>>>>> Stashed changes
+
+var max_walk_speed = 10000
 
 var velocity = Vector2()
 var was_on_floor = false
