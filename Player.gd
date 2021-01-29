@@ -7,6 +7,8 @@ const MAX_JUMP = 0.3
 const MOVEMENT_SPEED = 25000
 const FLOOR_FRICTION = 15000
 
+var max_walk_speed = 10000
+
 var velocity = Vector2()
 var was_on_floor = false
 
@@ -25,12 +27,24 @@ func _physics_process(delta):
 		print("START")
 	
 	if Input.is_action_pressed("left"):
-		velocity.x -= MOVEMENT_SPEED*delta
+		if velocity.x > -max_walk_speed:
+			velocity.x -= MOVEMENT_SPEED*delta
 	elif Input.is_action_pressed("right"):
-		velocity.x += MOVEMENT_SPEED*delta
+		if velocity.x < max_walk_speed:
+			velocity.x += MOVEMENT_SPEED*delta
 	elif is_on_floor() and velocity.x!=0:
 		velocity.x -= velocity.x/abs(velocity.x)*FLOOR_FRICTION*delta
 		
+	if velocity.x<-200.0:
+		$PlayerSprite.flip_h = true
+		$PlayerSprite.playing = true
+	elif velocity.x>200.0:
+		$PlayerSprite.flip_h = false
+		$PlayerSprite.playing = true
+	else:
+		velocity.x = 0.0
+		$PlayerSprite.playing = false
+	
 	if is_on_floor():
 		velocity.y = 0
 		if Input.is_action_pressed("jump"):
