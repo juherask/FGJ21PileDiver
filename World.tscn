@@ -1,70 +1,86 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://spritesheet_walk.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://customer1.png" type="Texture" id=3]
+[ext_resource path="res://Customer.gd" type="Script" id=4]
+[ext_resource path="res://ScoreLabel.gd" type="Script" id=5]
+[ext_resource path="res://key_placeholder.png" type="Texture" id=6]
+[ext_resource path="res://Item.gd" type="Script" id=7]
+[ext_resource path="res://highlight.png" type="Texture" id=8]
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
 region = Rect2( 160, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
 region = Rect2( 192, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
 region = Rect2( 224, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
 region = Rect2( 256, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
 region = Rect2( 288, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
+"speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 10, 35 )
 
-[sub_resource type="QuadMesh" id=8]
+[sub_resource type="QuadMesh" id=13]
 size = Vector2( 800, 10 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 400, 5 )
 
-[sub_resource type="QuadMesh" id=10]
+[sub_resource type="QuadMesh" id=15]
 size = Vector2( 200, 10 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 100, 5 )
+
+[sub_resource type="QuadMesh" id=17]
+size = Vector2( 20, 40 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 8, 90 )
+
+[sub_resource type="RectangleShape2D" id=19]
+
+[sub_resource type="RectangleShape2D" id=20]
 
 [node name="World" type="Node2D"]
 
@@ -78,11 +94,11 @@ __meta__ = {
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="Player"]
 scale = Vector2( 2, 2 )
-frames = SubResource( 6 )
+frames = SubResource( 11 )
 animation = "walk"
 
 [node name="BodyCollision" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 7 )
+shape = SubResource( 12 )
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2( 389, 585 )
@@ -91,10 +107,10 @@ __meta__ = {
 }
 
 [node name="FloorMesh" type="MeshInstance2D" parent="Floor"]
-mesh = SubResource( 8 )
+mesh = SubResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-shape = SubResource( 9 )
+shape = SubResource( 14 )
 
 [node name="Shelf" type="StaticBody2D" parent="."]
 position = Vector2( 88.8, 516.047 )
@@ -103,7 +119,66 @@ __meta__ = {
 }
 
 [node name="ShelfMesh" type="MeshInstance2D" parent="Shelf"]
-mesh = SubResource( 10 )
+mesh = SubResource( 15 )
 
 [node name="ShelfShape2D" type="CollisionShape2D" parent="Shelf"]
-shape = SubResource( 11 )
+shape = SubResource( 16 )
+
+[node name="Desk" type="StaticBody2D" parent="."]
+position = Vector2( 719.999, 560.015 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DeskMesh" type="MeshInstance2D" parent="Desk"]
+mesh = SubResource( 17 )
+
+[node name="DeskShape2D" type="CollisionShape2D" parent="Desk"]
+shape = SubResource( 18 )
+
+[node name="Customer" type="Area2D" parent="."]
+position = Vector2( 742.683, 547.742 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CustomerSkin" type="Sprite" parent="Customer"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+
+[node name="CustomerArea" type="CollisionShape2D" parent="Customer"]
+scale = Vector2( 3, 3 )
+shape = SubResource( 19 )
+
+[node name="ScoreLabel" type="Label" parent="."]
+margin_left = 19.0703
+margin_top = 15.8919
+margin_right = 59.0703
+margin_bottom = 29.8919
+text = "00000"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="RigidBody2D" parent="."]
+position = Vector2( 344.896, 503.231 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+shape = SubResource( 20 )
+
+[node name="ItemSprite" type="Sprite" parent="Item"]
+z_index = 2
+texture = ExtResource( 6 )
+
+[node name="HighlightSprite" type="Sprite" parent="Item"]
+visible = false
+z_index = -1
+texture = ExtResource( 8 )
+[connection signal="body_entered" from="Customer" to="Customer" method="_on_Customer_item_entered"]
+[connection signal="item_grabbed" from="Item" to="Player" method="_on_item_grabbed"]

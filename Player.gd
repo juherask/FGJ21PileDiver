@@ -16,6 +16,8 @@ var was_on_floor = false
 const UP = Vector2(0, -1)
 
 var jump_strength = 0.0
+var carried_item = null
+var carried_item_sprite = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,7 +26,7 @@ func _ready():
 func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("jump"):
-		jump_strength = 0.0
+		jump_strength = MIN_JUMP
 		print("START")
 	
 	if Input.is_action_pressed("left"):
@@ -39,9 +41,13 @@ func _physics_process(delta):
 	if velocity.x<-200.0:
 		$PlayerSprite.flip_h = true
 		$PlayerSprite.playing = true
+		if carried_item_sprite!=null:
+			carried_item_sprite.position = Vector2(-20,0)
 	elif velocity.x>200.0:
 		$PlayerSprite.flip_h = false
 		$PlayerSprite.playing = true
+		if carried_item_sprite!=null:
+			carried_item_sprite.position = Vector2(20,0)
 	else:
 		velocity.x = 0.0
 		$PlayerSprite.playing = false
@@ -51,7 +57,7 @@ func _physics_process(delta):
 		if Input.is_action_pressed("jump"):
 			jump_strength += delta
 		if Input.is_action_just_released("jump"):
-			jump_strength = min(MAX_JUMP, max(MIN_JUMP, jump_strength))
+			jump_strength = min(MAX_JUMP, jump_strength)
 			print("JUMP ", jump_strength)
 			velocity.y -= JUMP_BASE_STRENGTH*jump_strength
 			jump_strength = 0.0
@@ -67,6 +73,19 @@ func _physics_process(delta):
 		
 	move_and_slide( velocity*delta, UP, false, 4, 5.0)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_item_grabbed(item):
+	if carried_item!=null:
+		#TODO: Throw it away
+		pass
+		
+	carried_item = item
+	carried_item_sprite = item.get_node("ItemSprite")
+	
+	# TODO: This does not work. We would need something that can collide!
+	#  use a carry slot area 2d for the player?
+	
+	# Remove from the item, add to the player
+	item.get_parent().remove_child(item)
+	item.remove_child(carried_item_sprite)
+	self.add_child(carried_item_sprite)
+	carried_item_sprite.position = Vector2(20,0)
