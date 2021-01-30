@@ -19,6 +19,10 @@ config/name="Fgj 21 Pile Diver"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+ItemType="*res://ItemType.gd"
+
 [display]
 
 mouse_cursor/custom_image="res://cursor.png"

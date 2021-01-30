@@ -1,0 +1,2 @@
+extends Node
+enum {NONE, KEYS, PHONE, SOCK, WALLET, MITTEN, CAP, SCARF}

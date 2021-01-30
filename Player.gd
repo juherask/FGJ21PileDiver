@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const GRAVITY = 50000
-const JUMP_BASE_STRENGTH = 75000
+const JUMP_BASE_STRENGTH = 100000
 const MIN_JUMP = 0.2
 const MAX_JUMP = 0.35
 const MOVEMENT_SPEED = 25000
@@ -16,8 +16,9 @@ var was_on_floor = false
 const UP = Vector2(0, -1)
 
 var jump_strength = 0.0
-var carried_item = null
-var carried_item_sprite = null
+# This is kept in case it is added back to the tree
+#  remember to set it visible
+var carried_tree_item = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,13 +42,11 @@ func _physics_process(delta):
 	if velocity.x<-200.0:
 		$PlayerSprite.flip_h = true
 		$PlayerSprite.playing = true
-		if carried_item_sprite!=null:
-			carried_item_sprite.position = Vector2(-20,0)
+		$CarriedItem.position.x = -abs($CarriedItem.position.x)
 	elif velocity.x>200.0:
 		$PlayerSprite.flip_h = false
 		$PlayerSprite.playing = true
-		if carried_item_sprite!=null:
-			carried_item_sprite.position = Vector2(20,0)
+		$CarriedItem.position.x = abs($CarriedItem.position.x)
 	else:
 		velocity.x = 0.0
 		$PlayerSprite.playing = false
@@ -73,19 +72,38 @@ func _physics_process(delta):
 		
 	move_and_slide( velocity*delta, UP, false, 4, 5.0)
 
-func _on_item_grabbed(item):
-	if carried_item!=null:
-		#TODO: Throw it away
-		pass
+func throw_carried_item():
+	if not $CarriedItem:
+		return
 		
-	carried_item = item
-	carried_item_sprite = item.get_node("ItemSprite")
+	#TODO: Throw it away
+	pass
 	
-	# TODO: This does not work. We would need something that can collide!
-	#  use a carry slot area 2d for the player?
-	
-	# Remove from the item, add to the player
+	carried_tree_item=null
+
+func _on_item_grabbed(item):
+	if carried_tree_item!=null:
+		throw_carried_item()
+		
+	# We need to use Area2d because rigid body
+	#  would interfere with player movement.
+		
+	# Remove from the tree, add to the player.
 	item.get_parent().remove_child(item)
-	item.remove_child(carried_item_sprite)
-	self.add_child(carried_item_sprite)
-	carried_item_sprite.position = Vector2(20,0)
+	$CarriedItem/Sprite.texture = item.get_node("ItemSprite").texture
+	$CarriedItem.visible = true
+	
+	# Carried Area2d item to match the picked up (hidden) item.
+	$CarriedItem.item_id = item.item_id
+	$CarriedItem.item_type = item.item_type
+	$CarriedItem.item_color = item.item_color
+
+	carried_tree_item = item
+	
+
+func _on_Customer_takes_item(item):
+	if carried_tree_item!=null and \
+	   carried_tree_item.item_id == item.item_id:
+		$CarriedItem.visible = false
+		carried_tree_item.queue_free()
+		carried_tree_item = null
