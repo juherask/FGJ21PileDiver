@@ -69,14 +69,11 @@ func _physics_process(delta):
 		print("FALL")
 		velocity.y += delta*GRAVITY*JUMP_MULTIPLIER
 	
-	if was_on_floor!=is_on_floor():
-		was_on_floor=is_on_floor()
-		if !is_on_floor():
-			print("lost contact to the floor")
-	else:
+	if !is_on_floor():
 		velocity.y += delta*GRAVITY*FALL_MULTIPLIER
-		
+	
 	move_and_slide( velocity*delta, UP, false, 4, 5.0)
+	
 
 func walk_animation():
 	if carried_tree_item != null:
@@ -113,7 +110,10 @@ func _on_item_grabbed(item):
 		
 	# Remove from the tree, add to the player.
 	item.get_parent().remove_child(item)
-	$CarriedItem/Sprite.texture = item.get_node("ItemSprite").texture
+	var item_sprite = item.get_node("ItemSprite")
+	$CarriedItem/Sprite.texture = item_sprite.texture
+	$CarriedItem/Sprite.region_enabled = true
+	$CarriedItem/Sprite.region_rect = item_sprite.region_rect
 	$CarriedItem.visible = true
 	
 	# Carried Area2d item to match the picked up (hidden) item.
