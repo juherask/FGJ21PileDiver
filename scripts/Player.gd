@@ -2,12 +2,11 @@ extends KinematicBody2D
 
 const GRAVITY = 50000
 const JUMP_BASE_STRENGTH = 100000
-const MIN_JUMP = 0.1
-const MAX_JUMP = 0.32
+const MAX_JUMP = 0.15
 const MOVEMENT_SPEED = 25000
 const FLOOR_FRICTION = 15000
 const FALL_MULTIPLIER = 1.5
-const JUMP_MULTIPLIER = 10
+const JUMP_MULTIPLIER = 5
 var max_walk_speed = 10000
 
 var velocity = Vector2()
@@ -27,7 +26,7 @@ func _ready():
 func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("jump"):
-		jump_strength = MIN_JUMP
+		jump_strength = MAX_JUMP
 		print("START")
 	
 	if Input.is_action_pressed("left"):

@@ -16,16 +16,16 @@ _global_script_class_icons={
 [application]
 
 config/name="Fgj 21 Pile Diver"
-run/main_scene="res://World.tscn"
+run/main_scene="res://scenes/World.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-ItemType="*res://ItemType.gd"
+ItemType="*res://scripts/ItemType.gd"
 
 [display]
 
-mouse_cursor/custom_image="res://cursor.png"
+mouse_cursor/custom_image="res://sprites/cursor.png"
 mouse_cursor/custom_image_hotspot=Vector2( 7, 7 )
 
 [input]
@@ -53,4 +53,5 @@ quality/2d/use_pixel_snap=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 quality/filters/use_nearest_mipmap_filter=true
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
