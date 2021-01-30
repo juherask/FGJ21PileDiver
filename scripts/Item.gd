@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-export var item_type = ItemType.BABY
-export var item_color = Color.aqua
+export(ItemInfo.ItemType) var item_type = ItemInfo.ItemType.BABY
+export(Color) var item_color = Color.aqua
 export var item_id = 0
 
 const GRAB_DISTANCE = 50

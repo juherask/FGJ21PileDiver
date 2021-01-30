@@ -1,7 +1,7 @@
 extends Area2D
 
-export var requested_item_type = ItemType.KEYS
-export var requested_item_color = Color.aqua
+export(ItemInfo.ItemType) var requested_item_type = ItemInfo.ItemType.BABY
+export(Color) var requested_item_color = Color.aqua # see ItemInfo for valid colors
 
 signal takes_item
 
@@ -14,8 +14,9 @@ func _on_Customer_item_entered(potential_item):
 		# Right item. Client is happy
 		# TODO: walk away
 		# TODO: increase score depending on how long it took
+		# TODO: Play a chime
+		# TODO: Show a green +100 extra for a second
 		get_node("/root/World/CanvasLayer/ScoreLabel").score+=100
-		# TODO: increase 
 		
 		emit_signal("takes_item", potential_item)
 		$SpeechBubble.visible = true

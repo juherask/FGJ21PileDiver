@@ -15,17 +15,17 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Fgj 21 Pile Diver"
+config/name="Pile Diver"
 run/main_scene="res://scenes/World.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-ItemType="*res://scripts/ItemType.gd"
+ItemInfo="*res://scripts/ItemInfo.gd"
 
 [display]
 
-mouse_cursor/custom_image="res://cursor.png"
+mouse_cursor/custom_image="res://sprites/cursor.png"
 mouse_cursor/custom_image_hotspot=Vector2( 7, 7 )
 
 [input]

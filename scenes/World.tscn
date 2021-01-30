@@ -1220,4 +1220,5 @@ scale = Vector2( 0.5, 0.5 )
 z_index = 0
 [connection signal="area_entered" from="Customer" to="Customer" method="_on_Customer_area_entered"]
 [connection signal="body_entered" from="Customer" to="Customer" method="_on_Customer_body_entered"]
+[connection signal="takes_item" from="Customer" to="Player" method="_on_Customer_takes_item"]
 [connection signal="timeout" from="Customer/SpeechBubble/HideTimer" to="Customer" method="_on_HideTimer_timeout"]
