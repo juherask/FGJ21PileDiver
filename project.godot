@@ -16,12 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Fgj 21 Pile Diver"
-run/main_scene="res://World.tscn"
+run/main_scene="res://scenes/World.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-ItemType="*res://ItemType.gd"
+ItemType="*res://scripts/ItemType.gd"
 
 [display]
 

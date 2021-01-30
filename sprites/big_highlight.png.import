@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/big_highlight.png-68ca3400f04d56c4f136e237e0c73661.stex"
+path="res://.import/big_highlight.png-38689372fca137eecedd511acf9569e0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://big_highlight.png"
-dest_files=[ "res://.import/big_highlight.png-68ca3400f04d56c4f136e237e0c73661.stex" ]
+source_file="res://sprites/big_highlight.png"
+dest_files=[ "res://.import/big_highlight.png-38689372fca137eecedd511acf9569e0.stex" ]
 
 [params]
 
