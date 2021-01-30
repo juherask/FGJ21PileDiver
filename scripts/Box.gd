@@ -1,7 +1,7 @@
 extends Area2D
 
-const item_scene = preload("res://Item.tscn")
-var base_texture:Texture = preload("res://spritesheet_items.png")
+const item_scene = preload("res://scenes/Item.tscn")
+var base_texture:Texture = preload("res://sprites/spritesheet_items.png")
 
 export var item_type = ItemType.BABY
 export var item_count = 5
