@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spritesheet_player.png-94a58a63b4ee50e0c825b62e9a926f7f.stex"
+path="res://.import/spritesheet_customers.png-67e55767dc85bd595c77ba78df97e441.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Corel Auto-Preserve/spritesheet_player.png"
-dest_files=[ "res://.import/spritesheet_player.png-94a58a63b4ee50e0c825b62e9a926f7f.stex" ]
+source_file="res://sprites/spritesheet_customers.png"
+dest_files=[ "res://.import/spritesheet_customers.png-67e55767dc85bd595c77ba78df97e441.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

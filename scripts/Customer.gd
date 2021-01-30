@@ -30,6 +30,3 @@ func _on_Customer_body_entered(body):
 
 func _on_HideTimer_timeout():
 	$SpeechBubble.visible = false
-
-
-
