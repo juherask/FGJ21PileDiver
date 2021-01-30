@@ -2,12 +2,12 @@ extends KinematicBody2D
 
 const GRAVITY = 50000
 const JUMP_BASE_STRENGTH = 100000
-const MIN_JUMP = 0.2
-const MAX_JUMP = 0.35
+const MIN_JUMP = 0.1
+const MAX_JUMP = 0.32
 const MOVEMENT_SPEED = 25000
 const FLOOR_FRICTION = 15000
 const FALL_MULTIPLIER = 1.5
-
+const JUMP_MULTIPLIER = 10
 var max_walk_speed = 10000
 
 var velocity = Vector2()
@@ -41,41 +41,64 @@ func _physics_process(delta):
 		
 	if velocity.x<-200.0:
 		$PlayerSprite.flip_h = true
-		$PlayerSprite.playing = true
+		
+		walk_animation()
+			
 		$CarriedItem.position.x = -abs($CarriedItem.position.x)
 	elif velocity.x>200.0:
 		$PlayerSprite.flip_h = false
-		$PlayerSprite.playing = true
+		
+		walk_animation()
+		
 		$CarriedItem.position.x = abs($CarriedItem.position.x)
 	else:
 		velocity.x = 0.0
-		$PlayerSprite.playing = false
+		
+		walk_animation()
 	
 	if is_on_floor():
 		velocity.y = 0
+		was_on_floor = true
 		if Input.is_action_pressed("jump"):
-			jump_strength += delta
-		if Input.is_action_just_released("jump"):
-			jump_strength = min(MAX_JUMP, jump_strength)
-			print("JUMP ", jump_strength)
+			jump_strength = MAX_JUMP
 			velocity.y -= JUMP_BASE_STRENGTH*jump_strength
+			print("JUMP")
 			jump_strength = 0.0
+		
+	if Input.is_action_just_released("jump"):
+		print("FALL")
+		velocity.y += delta*GRAVITY*JUMP_MULTIPLIER
 	
 	if was_on_floor!=is_on_floor():
 		was_on_floor=is_on_floor()
 		if !is_on_floor():
 			print("lost contact to the floor")
-		
-	
 	else:
 		velocity.y += delta*GRAVITY*FALL_MULTIPLIER
 		
 	move_and_slide( velocity*delta, UP, false, 4, 5.0)
 
+func walk_animation():
+	if $CarriedItem.item_type != ItemType.NONE:
+		if velocity.x == 0:
+			$PlayerSprite.play("idlecarry")
+		else:
+			$PlayerSprite.play("carry")
+		if was_on_floor == false:
+			$PlayerSprite.play("jumpcarry")
+	else:		
+		if velocity.x == 0:
+			$PlayerSprite.play("idle")
+		else:
+			$PlayerSprite.play("walk")
+		if was_on_floor == false:
+			$PlayerSprite.play("jump")
+	$PlayerSprite.playing = true
+
 func throw_carried_item():
 	if not $CarriedItem:
 		return
-		
+	
 	#TODO: Throw it away
 	pass
 	
