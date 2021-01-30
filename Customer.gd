@@ -14,7 +14,7 @@ func _on_Customer_item_entered(potential_item):
 		# Right item. Client is happy
 		# TODO: walk away
 		# TODO: increase score depending on how long it took
-		get_node("/root/World/ScoreLabel").score+=100
+		get_node("/root/World/CanvasLayer/ScoreLabel").score+=100
 		# TODO: increase 
 		
 		emit_signal("takes_item", potential_item)

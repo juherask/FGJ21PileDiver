@@ -79,7 +79,7 @@ func _physics_process(delta):
 	move_and_slide( velocity*delta, UP, false, 4, 5.0)
 
 func walk_animation():
-	if $CarriedItem.item_type != ItemType.NONE:
+	if carried_tree_item != null:
 		if velocity.x == 0:
 			$PlayerSprite.play("idlecarry")
 		else:
