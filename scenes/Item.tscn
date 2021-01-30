@@ -1,12 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/spritesheet_items.png" type="Texture" id=1]
+[ext_resource path="res://sprites/highlight.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Item.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Item" type="RigidBody2D"]
-position = Vector2( 302.036, 507.596 )
 collision_layer = 3
 collision_mask = 3
-script = null
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -17,11 +20,11 @@ shape = SubResource( 1 )
 [node name="ItemSprite" type="Sprite" parent="."]
 scale = Vector2( 0.75, 0.75 )
 z_index = 2
-texture = null
+texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="HighlightSprite" type="Sprite" parent="."]
 visible = false
-z_index = -1
-texture = null
+z_index = 1
+texture = ExtResource( 2 )

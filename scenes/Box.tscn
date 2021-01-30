@@ -23,7 +23,7 @@ animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": false,
 "name": "open",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [node name="Box" type="Area2D"]

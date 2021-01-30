@@ -62,10 +62,11 @@ func _input(event):
 		var mp_d = mouse_position.distance_to(player_position)
 			
 		var box_width = $BoxAnimatedSprite.frames.get_frame("open", 0).get_height()
-		if mi_d<box_width and mp_d<GRAB_DISTANCE:
+		if mi_d<box_width and mp_d<GRAB_DISTANCE and len(item_textures)>0:
 			$HighlightSprite.visible = true
 			
 			if event is InputEventMouseButton:
+				$BoxAnimatedSprite.play()
 				open_box()
 		else:
 			$HighlightSprite.visible = false
