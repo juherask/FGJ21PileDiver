@@ -3,7 +3,7 @@ extends Area2D
 const item_scene = preload("res://scenes/Item.tscn")
 
 export(ItemInfo.ItemType) var item_type = ItemInfo.ItemType.BABY
-export var item_count = 5
+export var item_count = 10
 
 export var open_distance = 50
 
@@ -104,10 +104,10 @@ func _create_and_launch_item(from_item_texture):
 	)
 	var launch_vector = Vector2(0, launch_strength).rotated(
 		deg2rad( rng.randf_range(explode_random_dir_deg_min,
-		                         explode_random_dir_deg_max) )
+								 explode_random_dir_deg_max) )
 	)
 	var launch_spin = rng.randf_range(explode_random_spin_min,
-		                              explode_random_spin_max) 
+									  explode_random_spin_max) 
 	item_node.linear_velocity = launch_vector
 	item_node.angular_velocity = launch_spin
 	
@@ -130,5 +130,5 @@ func _on_ExplodeTimer_timeout():
 	# Queue up the next stage of the explosion (if there are textures left)
 	if len(item_textures)>0:
 		$ExplodeTimer.wait_time = rng.randf_range(explode_items_random_delay_min,
-		                                          explode_items_random_delay_max)
+												  explode_items_random_delay_max)
 		$ExplodeTimer.start()
