@@ -124,7 +124,7 @@ func throw_carried_item(strength_multiplier=1.0):
 	
 	carried_tree_item.linear_velocity = mi_dir*\
 		min(max_throw_strength, (BASE_THROW_STRENGTH+
-		    mi_dist*ADDITIONAL_THROW_MULTIPLIER)*strength_multiplier)
+			mi_dist*ADDITIONAL_THROW_MULTIPLIER)*strength_multiplier)
 		
 	carried_tree_item = null
 	
