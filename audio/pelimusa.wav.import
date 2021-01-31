@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/pelimusa.wav-6378bcfba554f934f1e61ab64386db23.sample"
+path="res://.import/pelimusa.wav-14bb8dbb0675c282fe98eb108a18126d.sample"
 
 [deps]
 
-source_file="res://pelimusa.wav"
-dest_files=[ "res://.import/pelimusa.wav-6378bcfba554f934f1e61ab64386db23.sample" ]
+source_file="res://audio/pelimusa.wav"
+dest_files=[ "res://.import/pelimusa.wav-14bb8dbb0675c282fe98eb108a18126d.sample" ]
 
 [params]
 

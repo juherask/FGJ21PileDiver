@@ -133,7 +133,7 @@ func _on_ExplodeTimer_timeout():
 	for i in range(explode_this_time):
 		# Instantiate new items based on topmost texture
 		_create_and_launch_item( item_textures.pop_front(),
-		                         item_colors.pop_front() )
+								 item_colors.pop_front() )
 		
 	# Queue up the next stage of the explosion (if there are textures left)
 	if len(item_textures)>0:
