@@ -61,7 +61,8 @@ func _on_queued_customer_at_the_desk():
 	var chosen_item_idx = Rn.G.randi_range(0, len(available_item_colors)-1)
 	if chosen_item_idx==-1:
 		# no more items
-		return
+		requested_item_color = Color.gray # should not be allowed
+		
 	requested_item_color = available_item_colors[chosen_item_idx]
 	requested_item_type = available_item_types[chosen_item_idx]
 	
