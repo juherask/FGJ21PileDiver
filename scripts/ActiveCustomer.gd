@@ -1,7 +1,7 @@
 extends Area2D
 
-export(ItemInfo.ItemType) var requested_item_type = ItemInfo.ItemType.BABY
-export(Color) var requested_item_color = Color.aqua # see ItemInfo for valid colors
+export(ItemInfo.ItemType) var requested_item_type = ItemInfo.ItemType.NONE
+export(Color) var requested_item_color = Color.transparent # see ItemInfo for valid colors
 
 signal adds_score
 signal takes_item
@@ -58,7 +58,6 @@ func _on_queued_customer_at_the_desk():
 				available_item_colors.append(boxed_item_color)
 				available_item_types.append(boxed_item_type)
 		if "is_item" in potential_box_or_item:
-			
 			available_item_colors.append(potential_box_or_item.item_color)
 			available_item_types.append(potential_box_or_item.item_type)
 	
@@ -79,3 +78,7 @@ func _on_queued_customer_at_the_desk():
 		ItemInfo.ITEM_NAMES[int(requested_item_type)]
 	$CanvasLayer/SpeechBubble/HideTimer.start()
 	
+
+
+func _on_Queue_queued_customer_at_the_desk():
+	pass # Replace with function body.

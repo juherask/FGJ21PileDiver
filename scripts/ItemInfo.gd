@@ -25,7 +25,7 @@ const ALLOWED_COLOR_NAMES = [
 	"A pink ",
 	"A lime ",
 	"A violet ",
-	"A coral ",
+	"A orange ",
 	"A brown "]
 
 const SPRITE_RECOLOR_LIGHT = Color("#E392FE")
