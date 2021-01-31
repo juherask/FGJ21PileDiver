@@ -5,4 +5,4 @@ extends Area2D
 # (see Item.gd and Customer.gd)
 var item_type = ItemInfo.ItemType.NONE
 var item_color = Color.transparent # see ItemInfo for valid colors
-var item_id = 0
+var unique_item_id = 0

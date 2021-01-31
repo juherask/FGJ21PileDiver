@@ -75,7 +75,7 @@ func _input(event):
 		if mi_d<box_width and mp_d<open_distance and len(item_textures)>0:
 			$HighlightSprite.visible = true
 			
-			if event is InputEventMouseButton:
+			if event is InputEventMouseButton and event.pressed:
 				$BoxAnimatedSprite.play()
 				open_box()
 		else:
