@@ -21,11 +21,12 @@ var rng = RandomNumberGenerator.new()
 
 # The recolored textures for each item in the box is kept here.
 var item_textures = []
+var item_colors = []
 var player = null
 
 static func _recolor_items():
 	var base_texture:Texture = preload("res://sprites/spritesheet_items.png")
-	var recolored_textures = []
+	var recolored_textures = {}
 	
 	for color in ItemInfo.ALLOWED_ITEM_COLORS: 
 		# Load texture and recolor it
@@ -46,18 +47,22 @@ static func _recolor_items():
 		
 		var modified_texture = ImageTexture.new()
 		modified_texture.create_from_image(texture_image)
-		recolored_textures.append(modified_texture)
+		recolored_textures[color] = modified_texture
 		
 	return recolored_textures
 
 func _ready():
 	player = get_node("/root/World/Player")
 	
-	# initialize item sprite textures
+	# initialize item sprite textures (returns a dict keyed by color)
 	var recolored_textures = _recolor_items()
+	var color_key_list = recolored_textures.keys()
 	for i in range(item_count):
 		# Reuse colors as necessary
-		item_textures.append( recolored_textures[i%len(recolored_textures)] )
+		var item_color =  color_key_list[i%len(color_key_list)]
+		var matching_texture = recolored_textures[item_color]
+		item_colors.append( item_color )
+		item_textures.append( matching_texture )
 		
 func open_box():
 	$ExplodeTimer.start()
@@ -82,10 +87,12 @@ func _input(event):
 			$HighlightSprite.visible = false
 
 
-func _create_and_launch_item(from_item_texture):
+func _create_and_launch_item(from_item_texture, used_item_color):
 	var item_node = item_scene.instance()
-	var item_sprite = item_node.get_node("ItemSprite")
+	item_node.item_type = item_type
+	item_node.item_color = used_item_color
 	
+	var item_sprite = item_node.get_node("ItemSprite")
 	item_sprite.texture = from_item_texture
 	item_sprite.region_enabled = true
 	
@@ -125,7 +132,8 @@ func _on_ExplodeTimer_timeout():
 	var explode_this_time = rng.randi_range(1,max_tex)
 	for i in range(explode_this_time):
 		# Instantiate new items based on topmost texture
-		_create_and_launch_item( item_textures.pop_front() )
+		_create_and_launch_item( item_textures.pop_front(),
+		                         item_colors.pop_front() )
 		
 	# Queue up the next stage of the explosion (if there are textures left)
 	if len(item_textures)>0:

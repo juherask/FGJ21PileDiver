@@ -22,8 +22,6 @@ func _on_Customer_item_entered(potential_item):
 		emit_signal("takes_item", potential_item)
 		
 		$CanvasLayer/SpeechBubble.visible = true
-		
-		$CanvasLayer/SpeechBubble/HideTimer.wait_time = 2
 		$CanvasLayer/SpeechBubble/HideTimer.start()
 
 func _on_Customer_area_entered(area):
