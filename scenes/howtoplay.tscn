@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprites/MENUBG.png" type="Texture" id=1]
+[ext_resource path="res://sprites/taped_paper.png" type="Texture" id=2]
+[ext_resource path="res://scenes/buttons/Back_Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/howtoplay.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/VERDANA.TTF"
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = SubResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_left = 395.0
+margin_top = 183.0
+margin_right = 769.0
+margin_bottom = 463.0
+texture = ExtResource( 2 )
+patch_margin_left = 15
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 13
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+margin_left = 21.0
+margin_top = 22.0
+margin_right = 354.0
+margin_bottom = 201.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "How To Play:
+WASD to move
+Click boxes to open them
+Click items to pick them up
+Click to yeet item
+(further you click, further it'll fly)"
+
+[node name="BackButton" parent="." instance=ExtResource( 3 )]
+margin_left = 410.585
+margin_top = 385.101
+margin_right = 770.585
+margin_bottom = 455.101
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
