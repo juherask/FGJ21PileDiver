@@ -3,6 +3,7 @@ extends Area2D
 export(ItemInfo.ItemType) var requested_item_type = ItemInfo.ItemType.BABY
 export(Color) var requested_item_color = Color.aqua # see ItemInfo for valid colors
 
+signal adds_score
 signal takes_item
 
 func _on_Customer_item_entered(potential_item):
@@ -13,12 +14,10 @@ func _on_Customer_item_entered(potential_item):
 		   potential_item.item_color == requested_item_color:
 
 			# Right item. Client is happy
-			# TODO: walk away
-			# TODO: increase score depending on how long it took
 			# TODO: Play a chime
-			# TODO: Show a green +100 extra for a second
 
-			get_node("/root/World/CanvasLayer/ScoreLabel").score+=100
+
+			emit_signal("adds_score", 100)
 			
 			var world_tree_idx = get_parent().remove_child(potential_item)
 			emit_signal("takes_item", potential_item)
@@ -26,8 +25,14 @@ func _on_Customer_item_entered(potential_item):
 			$CanvasLayer/SpeechBubble.visible = true
 			$CanvasLayer/SpeechBubble/HideTimer.start()
 		else:
-			$CanvasLayer/ItemBubble.visible = true
-			$CanvasLayer/SpeechBubble/HideTimer.start()
+			var color_idx = ItemInfo.ALLOWED_ITEM_COLORS.find(requested_item_color)
+			if color_idx>=0:
+				$CanvasLayer/ItemBubble.visible = true
+				$CanvasLayer/ItemBubble/HideTimer.start()
+				$CanvasLayer/ItemBubble/VBoxContainer/Label.text = \
+					ItemInfo.ALLOWED_COLOR_NAMES[color_idx] +\
+					ItemInfo.ITEM_NAMES[requested_item_type]
+				
 
 func _on_Customer_area_entered(area):
 	# Check for carried item

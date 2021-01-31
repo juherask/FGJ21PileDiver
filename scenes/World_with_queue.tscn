@@ -1,20 +1,15 @@
-[gd_scene load_steps=121 format=2]
+[gd_scene load_steps=120 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/speechbubble.png" type="Texture" id=2]
 [ext_resource path="res://sprites/walleye.tres" type="Texture" id=3]
 [ext_resource path="res://sprites/tileset.png" type="Texture" id=4]
-[ext_resource path="res://sprites/spritesheet_customers.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Queue.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sprites/spritesheet_player.png" type="Texture" id=6]
 [ext_resource path="res://scripts/ScoreLabel.gd" type="Script" id=7]
 [ext_resource path="res://scripts/CarriedItem.gd" type="Script" id=8]
 [ext_resource path="res://scripts/ActiveCustomer.gd" type="Script" id=9]
-[ext_resource path="res://scenes/QueuingCustomer.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Box.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/Queue.gd" type="Script" id=12]
-[ext_resource path="res://audio/pelimusa.wav" type="AudioStream" id=13]
-[ext_resource path="res://sprites/scoreboard.png" type="Texture" id=14]
-[ext_resource path="res://scenes/plusscore.gd" type="Script" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -861,147 +856,147 @@ region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=68]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 160, 32, 32 )
+region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=69]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 160, 32, 32 )
+region = Rect2( 96, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=70]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 160, 32, 32 )
+region = Rect2( 128, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=71]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 32, 32, 32 )
+region = Rect2( 160, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=72]
 atlas = ExtResource( 6 )
-region = Rect2( 96, 32, 32, 32 )
+region = Rect2( 192, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=73]
 atlas = ExtResource( 6 )
-region = Rect2( 128, 32, 32, 32 )
+region = Rect2( 224, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=74]
 atlas = ExtResource( 6 )
-region = Rect2( 160, 32, 32, 32 )
+region = Rect2( 256, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=75]
 atlas = ExtResource( 6 )
-region = Rect2( 192, 32, 32, 32 )
+region = Rect2( 288, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=76]
 atlas = ExtResource( 6 )
-region = Rect2( 224, 32, 32, 32 )
+region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=77]
 atlas = ExtResource( 6 )
-region = Rect2( 256, 32, 32, 32 )
+region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=78]
 atlas = ExtResource( 6 )
-region = Rect2( 288, 32, 32, 32 )
+region = Rect2( 64, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=79]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 32, 32, 32 )
+region = Rect2( 96, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=80]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 32, 32, 32 )
+region = Rect2( 128, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=81]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 160, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=82]
 atlas = ExtResource( 6 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 192, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=83]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 128, 32, 32 )
+region = Rect2( 224, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=84]
 atlas = ExtResource( 6 )
-region = Rect2( 96, 128, 32, 32 )
+region = Rect2( 256, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=85]
 atlas = ExtResource( 6 )
-region = Rect2( 128, 128, 32, 32 )
+region = Rect2( 288, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=86]
 atlas = ExtResource( 6 )
-region = Rect2( 160, 128, 32, 32 )
+region = Rect2( 32, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=87]
 atlas = ExtResource( 6 )
-region = Rect2( 192, 128, 32, 32 )
+region = Rect2( 0, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=88]
 atlas = ExtResource( 6 )
-region = Rect2( 224, 128, 32, 32 )
+region = Rect2( 128, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=89]
 atlas = ExtResource( 6 )
-region = Rect2( 256, 128, 32, 32 )
+region = Rect2( 160, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=90]
 atlas = ExtResource( 6 )
-region = Rect2( 288, 128, 32, 32 )
+region = Rect2( 192, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=91]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 128, 32, 32 )
+region = Rect2( 224, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=92]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 128, 32, 32 )
+region = Rect2( 0, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=93]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 64, 32, 32 )
+region = Rect2( 32, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=94]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 64, 32, 32 )
+region = Rect2( 64, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=95]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 64, 32, 32 )
+region = Rect2( 96, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=96]
 atlas = ExtResource( 6 )
-region = Rect2( 96, 64, 32, 32 )
+region = Rect2( 0, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=97]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 96, 32, 32 )
+region = Rect2( 32, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=98]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 96, 32, 32 )
+region = Rect2( 64, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=99]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 96, 32, 32 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=100]
 atlas = ExtResource( 6 )
-region = Rect2( 128, 64, 32, 32 )
+region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=101]
 atlas = ExtResource( 6 )
-region = Rect2( 160, 64, 32, 32 )
+region = Rect2( 0, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=102]
 atlas = ExtResource( 6 )
-region = Rect2( 192, 64, 32, 32 )
+region = Rect2( 32, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=103]
 atlas = ExtResource( 6 )
-region = Rect2( 224, 64, 32, 32 )
+region = Rect2( 64, 160, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=104]
 animations = [ {
@@ -1010,40 +1005,40 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 70 ) ],
-"loop": false,
-"name": "yeet",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ) ],
+"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ) ],
 "loop": true,
 "name": "walk",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 81 ), SubResource( 82 ) ],
-"loop": true,
-"name": "idlecarry",
-"speed": 2.0
-}, {
-"frames": [ SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ) ],
+"frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ) ],
 "loop": true,
 "name": "carry",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ) ],
+"frames": [ SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ) ],
+"loop": false,
+"name": "jumpcarry",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ) ],
 "loop": false,
 "name": "jump",
 "speed": 30.0
 }, {
-"frames": [ SubResource( 97 ), SubResource( 98 ), SubResource( 99 ) ],
+"frames": [ SubResource( 96 ), SubResource( 97 ), SubResource( 98 ) ],
 "loop": false,
 "name": "pick",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ) ],
+"frames": [ SubResource( 99 ), SubResource( 100 ) ],
+"loop": true,
+"name": "idlecarry",
+"speed": 2.0
+}, {
+"frames": [ SubResource( 101 ), SubResource( 102 ), SubResource( 103 ) ],
 "loop": false,
-"name": "jumpcarry",
-"speed": 30.0
+"name": "yeet",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=105]
@@ -1051,16 +1046,16 @@ extents = Vector2( 5.33386, 16.1433 )
 
 [sub_resource type="RectangleShape2D" id=106]
 
-[sub_resource type="RectangleShape2D" id=130]
+[sub_resource type="RectangleShape2D" id=107]
 extents = Vector2( 15.4209, 15.9651 )
 
-[sub_resource type="DynamicFontData" id=131]
+[sub_resource type="DynamicFontData" id=108]
 antialiased = false
 font_path = "res://fonts/VERDANA.TTF"
 
-[sub_resource type="DynamicFont" id=132]
+[sub_resource type="DynamicFont" id=109]
 size = 11
-font_data = SubResource( 131 )
+font_data = SubResource( 108 )
 
 [node name="World" type="Node2D"]
 
@@ -1131,7 +1126,7 @@ __meta__ = {
 
 [node name="CustomerArea" type="CollisionShape2D" parent="ActiveCustomer"]
 position = Vector2( -12.62, 0 )
-shape = SubResource( 130 )
+shape = SubResource( 107 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="ActiveCustomer"]
 follow_viewport_enable = true
@@ -1167,7 +1162,7 @@ __meta__ = {
 show_behind_parent = true
 margin_right = 84.0
 margin_bottom = 15.0
-custom_fonts/font = SubResource( 132 )
+custom_fonts/font = SubResource( 109 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Thank you son"
 align = 1
@@ -1211,7 +1206,7 @@ __meta__ = {
 show_behind_parent = true
 margin_right = 84.0
 margin_bottom = 15.0
-custom_fonts/font = SubResource( 132 )
+custom_fonts/font = SubResource( 109 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -1243,33 +1238,11 @@ scale = Vector2( 0.5, 0.5 )
 z_index = 0
 item_count = 4
 
-[node name="Queue" type="Node2D" parent="."]
-position = Vector2( 741.39, 575.776 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="QueuingCustomer2" parent="Queue" instance=ExtResource( 10 )]
-position = Vector2( 16, -16 )
-
-[node name="QueuingCustomer3" parent="Queue" instance=ExtResource( 10 )]
-position = Vector2( 32, -16 )
-
-[node name="QueuingCustomer4" parent="Queue" instance=ExtResource( 10 )]
-position = Vector2( 48, -16 )
-
-[node name="QueuingCustomer5" parent="Queue" instance=ExtResource( 10 )]
-position = Vector2( 64, -16 )
-
-[node name="QueuingCustomer6" parent="Queue" instance=ExtResource( 10 )]
-position = Vector2( 80, -16 )
+[node name="Queue" parent="." instance=ExtResource( 5 )]
 [connection signal="animation_finished" from="Player/PlayerSprite" to="Player" method="_on_PlayerSprite_animation_finished"]
 [connection signal="timeout" from="Player/GrabTimer" to="Player" method="_on_GrabTimer_timeout"]
 [connection signal="area_entered" from="ActiveCustomer" to="ActiveCustomer" method="_on_Customer_area_entered"]
 [connection signal="body_entered" from="ActiveCustomer" to="ActiveCustomer" method="_on_Customer_body_entered"]
 [connection signal="takes_item" from="ActiveCustomer" to="Player" method="_on_Customer_takes_item"]
-[connection signal="takes_item" from="ActiveCustomer" to="Queue" method="_on_ActiveCustomer_takes_item"]
 [connection signal="timeout" from="ActiveCustomer/CanvasLayer/SpeechBubble/HideTimer" to="ActiveCustomer" method="_on_HideTimer_timeout"]
 [connection signal="timeout" from="ActiveCustomer/CanvasLayer/ItemBubble/HideTimer" to="ActiveCustomer" method="_on_HideTimer_timeout"]
-[connection signal="queued_customer_at_the_desk" from="Queue" to="ActiveCustomer" method="_on_queued_customer_at_the_desk"]
