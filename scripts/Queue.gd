@@ -54,6 +54,10 @@ func _process(delta):
 func _on_ActiveCustomer_takes_item(item):
 	first_slot_free = true
 	#remove_child(leftmost_customer)
+	
+	if leftmost_customer==null:
+		get_node("/root/World/Player/TheEndLabel").visible = true
+	
 	leaving_customer = leftmost_customer
 	leaving_customer.active_sprite.flip_h = false
 	leaving_customer.active_sprite.play("walk")

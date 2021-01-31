@@ -2,10 +2,10 @@ extends Node
 enum ItemType{NONE, KEYS, MITTENS, HAT, SOCKS, WALLET, SCARF, PHONE, BABY}
 const ITEM_NAMES = [
 	"thingamabob",
-	"keys",
-	"mittens",
+	"key",
+	"mitten",
 	"hat",
-	"socks",
+	"sock",
 	"wallet",
 	"scarf",
 	"phone",

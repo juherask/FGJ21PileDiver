@@ -3,7 +3,7 @@
 [ext_resource path="res://sprites/MENUBG.png" type="Texture" id=1]
 [ext_resource path="res://sprites/taped_paper.png" type="Texture" id=2]
 [ext_resource path="res://scenes/buttons/Back_Button.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/howtoplay.gd" type="Script" id=4]
+[ext_resource path="res://scripts/howtoplay.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/VERDANA.TTF"

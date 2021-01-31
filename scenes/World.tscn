@@ -1,9 +1,10 @@
-[gd_scene load_steps=127 format=2]
+[gd_scene load_steps=129 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/speechbubble.png" type="Texture" id=2]
 [ext_resource path="res://sprites/walleye.tres" type="Texture" id=3]
 [ext_resource path="res://sprites/tileset.png" type="Texture" id=4]
+[ext_resource path="res://fonts/MINECRAFTIA-REGULAR.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://sprites/spritesheet_player.png" type="Texture" id=6]
 [ext_resource path="res://scripts/ScoreLabel.gd" type="Script" id=7]
 [ext_resource path="res://scripts/CarriedItem.gd" type="Script" id=8]
@@ -899,107 +900,107 @@ region = Rect2( 0, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=78]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 32, 32, 32 )
+region = Rect2( 128, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=79]
 atlas = ExtResource( 6 )
-region = Rect2( 96, 32, 32, 32 )
+region = Rect2( 160, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=80]
 atlas = ExtResource( 6 )
-region = Rect2( 128, 32, 32, 32 )
+region = Rect2( 192, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=81]
 atlas = ExtResource( 6 )
-region = Rect2( 160, 32, 32, 32 )
+region = Rect2( 224, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=82]
 atlas = ExtResource( 6 )
-region = Rect2( 192, 32, 32, 32 )
+region = Rect2( 0, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=83]
 atlas = ExtResource( 6 )
-region = Rect2( 224, 32, 32, 32 )
+region = Rect2( 32, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=84]
 atlas = ExtResource( 6 )
-region = Rect2( 256, 32, 32, 32 )
+region = Rect2( 64, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=85]
 atlas = ExtResource( 6 )
-region = Rect2( 288, 32, 32, 32 )
+region = Rect2( 0, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=86]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 32, 32, 32 )
+region = Rect2( 32, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=87]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 32, 32, 32 )
+region = Rect2( 64, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=88]
 atlas = ExtResource( 6 )
-region = Rect2( 128, 64, 32, 32 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=89]
 atlas = ExtResource( 6 )
-region = Rect2( 160, 64, 32, 32 )
+region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=90]
 atlas = ExtResource( 6 )
-region = Rect2( 192, 64, 32, 32 )
+region = Rect2( 0, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=91]
 atlas = ExtResource( 6 )
-region = Rect2( 224, 64, 32, 32 )
+region = Rect2( 32, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=92]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 96, 32, 32 )
+region = Rect2( 64, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=93]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 96, 32, 32 )
+region = Rect2( 96, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=94]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 96, 32, 32 )
+region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=95]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 160, 32, 32 )
+region = Rect2( 96, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=96]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 160, 32, 32 )
+region = Rect2( 128, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=97]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 160, 32, 32 )
+region = Rect2( 160, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=98]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 192, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=99]
 atlas = ExtResource( 6 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 224, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=100]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 64, 32, 32 )
+region = Rect2( 256, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=101]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 64, 32, 32 )
+region = Rect2( 288, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=102]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 64, 32, 32 )
+region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=103]
 atlas = ExtResource( 6 )
-region = Rect2( 96, 64, 32, 32 )
+region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=104]
 animations = [ {
@@ -1013,35 +1014,35 @@ animations = [ {
 "name": "carry",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ) ],
-"loop": true,
-"name": "walk",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ) ],
+"frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ) ],
 "loop": false,
 "name": "jumpcarry",
 "speed": 30.0
 }, {
-"frames": [ SubResource( 92 ), SubResource( 93 ), SubResource( 94 ) ],
+"frames": [ SubResource( 82 ), SubResource( 83 ), SubResource( 84 ) ],
 "loop": false,
 "name": "pick",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 95 ), SubResource( 96 ), SubResource( 97 ) ],
+"frames": [ SubResource( 85 ), SubResource( 86 ), SubResource( 87 ) ],
 "loop": false,
 "name": "yeet",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 98 ), SubResource( 99 ) ],
+"frames": [ SubResource( 88 ), SubResource( 89 ) ],
 "loop": true,
 "name": "idlecarry",
 "speed": 2.0
 }, {
-"frames": [ SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ) ],
+"frames": [ SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ) ],
 "loop": false,
 "name": "jump",
 "speed": 30.0
+}, {
+"frames": [ SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=105]
@@ -1056,24 +1057,30 @@ font_path = "res://fonts/VERDANA.TTF"
 size = 11
 font_data = SubResource( 107 )
 
-[sub_resource type="RectangleShape2D" id=109]
+[sub_resource type="DynamicFont" id=109]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="RectangleShape2D" id=110]
 extents = Vector2( 15.4209, 15.9651 )
 
-[sub_resource type="DynamicFontData" id=110]
+[sub_resource type="DynamicFontData" id=111]
 antialiased = false
 font_path = "res://fonts/VERDANA.TTF"
 
-[sub_resource type="DynamicFont" id=111]
+[sub_resource type="DynamicFont" id=112]
 size = 11
-font_data = SubResource( 110 )
+font_data = SubResource( 111 )
 
-[sub_resource type="DynamicFontData" id=112]
+[sub_resource type="DynamicFontData" id=113]
 antialiased = false
 font_path = "res://fonts/VERDANA.TTF"
 
-[sub_resource type="DynamicFont" id=113]
+[sub_resource type="DynamicFont" id=114]
 size = 11
-font_data = SubResource( 112 )
+font_data = SubResource( 113 )
 
 [node name="World" type="Node2D"]
 
@@ -1112,7 +1119,7 @@ zoom = Vector2( 0.35, 0.35 )
 smoothing_enabled = true
 
 [node name="CarriedItem" type="Area2D" parent="Player"]
-position = Vector2( 16.25, -3.75 )
+position = Vector2( 12.1296, -3.37543 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 8 )
@@ -1157,6 +1164,22 @@ __meta__ = {
 wait_time = 0.75
 one_shot = true
 
+[node name="TheEndLabel" type="Label" parent="Player"]
+visible = false
+margin_left = -105.839
+margin_top = -90.9743
+margin_right = 110.161
+margin_bottom = -13.9743
+custom_fonts/font = SubResource( 109 )
+text = "Employee of the month,
+here I come
+(good job,
+the end)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ActiveCustomer" type="Area2D" parent="."]
 position = Vector2( 743.404, 559.979 )
 collision_layer = 2
@@ -1168,7 +1191,7 @@ __meta__ = {
 
 [node name="CustomerArea" type="CollisionShape2D" parent="ActiveCustomer"]
 position = Vector2( -12.62, 0 )
-shape = SubResource( 109 )
+shape = SubResource( 110 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="ActiveCustomer"]
 follow_viewport_enable = true
@@ -1204,7 +1227,7 @@ __meta__ = {
 show_behind_parent = true
 margin_right = 84.0
 margin_bottom = 15.0
-custom_fonts/font = SubResource( 111 )
+custom_fonts/font = SubResource( 112 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Thank you son"
 align = 1
@@ -1247,7 +1270,7 @@ __meta__ = {
 show_behind_parent = true
 margin_right = 84.0
 margin_bottom = 15.0
-custom_fonts/font = SubResource( 111 )
+custom_fonts/font = SubResource( 112 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -1264,21 +1287,21 @@ position = Vector2( 295.803, 744.394 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 0
 item_type = 1
-item_count = 20
+item_count = 12
 
 [node name="Box2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 136.012, 791.651 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 0
 item_type = 3
-item_count = 20
+item_count = 12
 
 [node name="Box3" parent="." instance=ExtResource( 11 )]
 position = Vector2( 183.247, 711.871 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 0
 item_type = 2
-item_count = 20
+item_count = 8
 
 [node name="Box4" parent="." instance=ExtResource( 11 )]
 position = Vector2( 215.485, 775.635 )
@@ -1338,7 +1361,7 @@ __meta__ = {
 [node name="ScoreLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
 margin_right = 85.0
 margin_bottom = 15.0
-custom_fonts/font = SubResource( 113 )
+custom_fonts/font = SubResource( 114 )
 text = "00000"
 align = 2
 clip_text = true
@@ -1358,8 +1381,8 @@ follow_viewport_enable = true
 [connection signal="adds_score" from="ActiveCustomer" to="Player/VBoxContainer/ding" method="_on_Customer_adds_score"]
 [connection signal="area_entered" from="ActiveCustomer" to="ActiveCustomer" method="_on_Customer_area_entered"]
 [connection signal="body_entered" from="ActiveCustomer" to="ActiveCustomer" method="_on_Customer_body_entered"]
-[connection signal="takes_item" from="ActiveCustomer" to="Queue" method="_on_ActiveCustomer_takes_item"]
 [connection signal="takes_item" from="ActiveCustomer" to="Player" method="_on_Customer_takes_item"]
+[connection signal="takes_item" from="ActiveCustomer" to="Queue" method="_on_ActiveCustomer_takes_item"]
 [connection signal="timeout" from="ActiveCustomer/CanvasLayer/SpeechBubble/HideTimer" to="ActiveCustomer" method="_on_HideTimer_timeout"]
 [connection signal="timeout" from="ActiveCustomer/CanvasLayer/ItemBubble/HideTimer" to="ActiveCustomer" method="_on_HideTimer_timeout"]
 [connection signal="queued_customer_at_the_desk" from="Queue" to="ActiveCustomer" method="_on_queued_customer_at_the_desk"]
