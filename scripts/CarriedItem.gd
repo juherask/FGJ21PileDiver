@@ -6,3 +6,4 @@ extends Area2D
 var item_type = ItemInfo.ItemType.NONE
 var item_color = Color.transparent # see ItemInfo for valid colors
 var unique_item_id = 0
+var carried_item = true

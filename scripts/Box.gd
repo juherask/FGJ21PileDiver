@@ -17,12 +17,11 @@ export var explode_random_dir_deg_max = 33
 export var explode_random_spin_min = -100
 export var explode_random_spin_max = 100
 
-var rng = RandomNumberGenerator.new()
-
 # The recolored textures for each item in the box is kept here.
 var item_textures = []
 var item_colors = []
 var player = null
+var is_box = true
 
 static func _recolor_items():
 	var base_texture:Texture = preload("res://sprites/spritesheet_items.png")
@@ -63,6 +62,14 @@ func _ready():
 		var matching_texture = recolored_textures[item_color]
 		item_colors.append( item_color )
 		item_textures.append( matching_texture )
+	
+	var label_texture = $LabelSprite.texture
+	$LabelSprite.region_rect = Rect2(
+		label_texture.get_height()*(int(item_type)-1),
+		0, 
+		label_texture.get_height(),
+		label_texture.get_height()
+	)
 		
 func open_box():
 	$ExplodeTimer.start()
@@ -105,15 +112,15 @@ func _create_and_launch_item(from_item_texture, used_item_color):
 	
 	# Randomize the launch strength, spin, and direction
 	
-	var launch_strength = rng.randf_range(
+	var launch_strength = Rn.G.randf_range(
 		explode_random_velocity_min,
 		explode_random_velocity_max
 	)
 	var launch_vector = Vector2(0, launch_strength).rotated(
-		deg2rad( rng.randf_range(explode_random_dir_deg_min,
+		deg2rad( Rn.G.randf_range(explode_random_dir_deg_min,
 								 explode_random_dir_deg_max) )
 	)
-	var launch_spin = rng.randf_range(explode_random_spin_min,
+	var launch_spin = Rn.G.randf_range(explode_random_spin_min,
 									  explode_random_spin_max) 
 	item_node.linear_velocity = launch_vector
 	item_node.angular_velocity = launch_spin
@@ -129,7 +136,7 @@ func _on_ExplodeTimer_timeout():
 		return
 	
 	var max_tex = min(explode_items_at_a_time_max, len(item_textures))
-	var explode_this_time = rng.randi_range(1,max_tex)
+	var explode_this_time = Rn.G.randi_range(1,max_tex)
 	for i in range(explode_this_time):
 		# Instantiate new items based on topmost texture
 		_create_and_launch_item( item_textures.pop_front(),
@@ -137,6 +144,6 @@ func _on_ExplodeTimer_timeout():
 		
 	# Queue up the next stage of the explosion (if there are textures left)
 	if len(item_textures)>0:
-		$ExplodeTimer.wait_time = rng.randf_range(explode_items_random_delay_min,
+		$ExplodeTimer.wait_time = Rn.G.randf_range(explode_items_random_delay_min,
 												  explode_items_random_delay_max)
 		$ExplodeTimer.start()

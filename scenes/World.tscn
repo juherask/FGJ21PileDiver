@@ -1,15 +1,16 @@
-[gd_scene load_steps=143 format=2]
+[gd_scene load_steps=121 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/speechbubble.png" type="Texture" id=2]
 [ext_resource path="res://sprites/walleye.tres" type="Texture" id=3]
 [ext_resource path="res://sprites/tileset.png" type="Texture" id=4]
-[ext_resource path="res://sprites/spritesheet_customers.png" type="Texture" id=5]
 [ext_resource path="res://sprites/spritesheet_player.png" type="Texture" id=6]
 [ext_resource path="res://scripts/ScoreLabel.gd" type="Script" id=7]
 [ext_resource path="res://scripts/CarriedItem.gd" type="Script" id=8]
-[ext_resource path="res://scripts/Customer.gd" type="Script" id=9]
+[ext_resource path="res://scripts/ActiveCustomer.gd" type="Script" id=9]
+[ext_resource path="res://scenes/QueuingCustomer.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Box.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Queue.gd" type="Script" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -1004,112 +1005,6 @@ extents = Vector2( 5.33386, 16.1433 )
 
 [sub_resource type="RectangleShape2D" id=106]
 
-[sub_resource type="AtlasTexture" id=107]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 288, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=108]
-atlas = ExtResource( 5 )
-region = Rect2( 32, 288, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=109]
-atlas = ExtResource( 5 )
-region = Rect2( 64, 352, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=110]
-atlas = ExtResource( 5 )
-region = Rect2( 96, 352, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=111]
-atlas = ExtResource( 5 )
-region = Rect2( 128, 352, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=112]
-atlas = ExtResource( 5 )
-region = Rect2( 160, 352, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=113]
-atlas = ExtResource( 5 )
-region = Rect2( 192, 352, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=114]
-atlas = ExtResource( 5 )
-region = Rect2( 224, 352, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=115]
-atlas = ExtResource( 5 )
-region = Rect2( 256, 352, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=116]
-atlas = ExtResource( 5 )
-region = Rect2( 288, 352, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=117]
-atlas = ExtResource( 5 )
-region = Rect2( 32, 352, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=118]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 352, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=119]
-atlas = ExtResource( 5 )
-region = Rect2( 64, 320, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=120]
-atlas = ExtResource( 5 )
-region = Rect2( 96, 320, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=121]
-atlas = ExtResource( 5 )
-region = Rect2( 128, 320, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=122]
-atlas = ExtResource( 5 )
-region = Rect2( 160, 320, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=123]
-atlas = ExtResource( 5 )
-region = Rect2( 192, 320, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=124]
-atlas = ExtResource( 5 )
-region = Rect2( 224, 320, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=125]
-atlas = ExtResource( 5 )
-region = Rect2( 256, 320, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=126]
-atlas = ExtResource( 5 )
-region = Rect2( 288, 320, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=127]
-atlas = ExtResource( 5 )
-region = Rect2( 32, 320, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=128]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 320, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=129]
-animations = [ {
-"frames": [ SubResource( 107 ), SubResource( 108 ) ],
-"loop": true,
-"name": "idle",
-"speed": 2.0
-}, {
-"frames": [ SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ) ],
-"loop": true,
-"name": "walk",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 119 ), SubResource( 120 ), SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ), SubResource( 125 ), SubResource( 126 ), SubResource( 127 ), SubResource( 128 ) ],
-"loop": true,
-"name": "carry",
-"speed": 10.0
-} ]
-
 [sub_resource type="RectangleShape2D" id=130]
 extents = Vector2( 15.4209, 15.9651 )
 
@@ -1136,7 +1031,7 @@ format = 1
 tile_data = PoolIntArray( 1638405, 2, 0, 1638406, 2, 0, 1638407, 2, 0, 1638408, 2, 0, 1638409, 2, 0, 1638410, 2, 0, 1638411, 2, 1, 1638441, 0, 3, 1638442, 0, 4, 1703941, 2, 0, 1703942, 2, 0, 1703943, 2, 0, 1703944, 2, 0, 1703945, 2, 0, 1703946, 2, 0, 1703947, 2, 1, 1769477, 2, 0, 1769478, 2, 0, 1769479, 2, 0, 1769480, 2, 0, 1769481, 2, 0, 1769482, 2, 0, 1769483, 2, 1, 1835013, 2, 65536, 1835014, 2, 65536, 1835015, 2, 65536, 1835016, 2, 65536, 1835017, 2, 65536, 1835018, 2, 65536, 1835019, 2, 65537, 1835049, 0, 3, 1835050, 0, 4, 1835056, 3, 1, 1900547, 0, 0, 1900548, 0, 1, 1900549, 0, 1, 1900550, 0, 1, 1900551, 0, 1, 1900552, 0, 1, 1900553, 0, 1, 1900554, 0, 1, 1900555, 0, 1, 1900556, 0, 2, 1900592, 3, 1, 1966090, 2, 1, 1966091, 2, 1, 1966128, 3, 1, 2031619, 0, 0, 2031620, 0, 1, 2031621, 0, 1, 2031622, 0, 2, 2031625, 2, 0, 2031626, 2, 0, 2031627, 2, 0, 2031628, 2, 1, 2031664, 3, 1, 2097159, 2, 1, 2097160, 2, 1, 2097161, 2, 0, 2097162, 2, 0, 2097163, 2, 0, 2097164, 2, 0, 2097165, 2, 0, 2097166, 2, 1, 2097200, 3, 1, 2162694, 2, 1, 2162695, 2, 0, 2162696, 2, 0, 2162697, 2, 0, 2162698, 2, 0, 2162699, 2, 0, 2162700, 2, 0, 2162701, 2, 0, 2162702, 2, 1, 2162703, 2, 1, 2162736, 3, 1, 2228230, 2, 1, 2228231, 2, 0, 2228232, 2, 0, 2228233, 2, 0, 2228234, 2, 0, 2228235, 2, 0, 2228236, 2, 0, 2228237, 2, 0, 2228238, 2, 1, 2228239, 2, 1, 2228240, 2, 1, 2228272, 3, 1, 2293766, 2, 65536, 2293767, 2, 65536, 2293768, 2, 65536, 2293769, 2, 65536, 2293770, 2, 65536, 2293771, 2, 65536, 2293772, 2, 65536, 2293773, 2, 65536, 2293774, 2, 65537, 2293775, 2, 1, 2293776, 2, 1, 2293777, 2, 1, 2293805, 1, 0, 2293808, 3, 1, 2359344, 3, 1 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 410.25, 559.75 )
+position = Vector2( 647.838, 559.043 )
 z_index = 3
 collision/safe_margin = 0.33
 script = ExtResource( 1 )
@@ -1179,7 +1074,7 @@ __meta__ = {
 "_editor_description_": "This is the time it takes to take a proper hold of the item. It cannot be thrown before it is elapsed."
 }
 
-[node name="Customer" type="Area2D" parent="."]
+[node name="ActiveCustomer" type="Area2D" parent="."]
 position = Vector2( 743.404, 559.979 )
 collision_layer = 2
 collision_mask = 2
@@ -1188,20 +1083,14 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CustomerSprite" type="AnimatedSprite" parent="Customer"]
-frames = SubResource( 129 )
-animation = "idle"
-playing = true
-flip_h = true
-
-[node name="CustomerArea" type="CollisionShape2D" parent="Customer"]
+[node name="CustomerArea" type="CollisionShape2D" parent="ActiveCustomer"]
 position = Vector2( -12.62, 0 )
 shape = SubResource( 130 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Customer"]
+[node name="CanvasLayer" type="CanvasLayer" parent="ActiveCustomer"]
 follow_viewport_enable = true
 
-[node name="SpeechBubble" type="NinePatchRect" parent="Customer/CanvasLayer"]
+[node name="SpeechBubble" type="NinePatchRect" parent="ActiveCustomer/CanvasLayer"]
 visible = false
 margin_left = 648.0
 margin_top = 490.0
@@ -1219,7 +1108,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Customer/CanvasLayer/SpeechBubble"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ActiveCustomer/CanvasLayer/SpeechBubble"]
 margin_left = 8.0
 margin_top = 10.0
 margin_right = 92.0
@@ -1228,7 +1117,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Customer/CanvasLayer/SpeechBubble/VBoxContainer"]
+[node name="Label" type="Label" parent="ActiveCustomer/CanvasLayer/SpeechBubble/VBoxContainer"]
 show_behind_parent = true
 margin_right = 84.0
 margin_bottom = 15.0
@@ -1241,7 +1130,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HideTimer" type="Timer" parent="Customer/CanvasLayer/SpeechBubble"]
+[node name="HideTimer" type="Timer" parent="ActiveCustomer/CanvasLayer/SpeechBubble"]
+wait_time = 0.955
+one_shot = true
+
+[node name="ItemBubble" type="NinePatchRect" parent="ActiveCustomer/CanvasLayer"]
+visible = false
+margin_left = 648.0
+margin_top = 490.0
+margin_right = 748.0
+margin_bottom = 546.0
+rect_scale = Vector2( 1.10697, 0.92403 )
+texture = ExtResource( 2 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 38
+patch_margin_bottom = 46
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ActiveCustomer/CanvasLayer/ItemBubble"]
+margin_left = 8.0
+margin_top = 10.0
+margin_right = 92.0
+margin_bottom = 25.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ActiveCustomer/CanvasLayer/ItemBubble/VBoxContainer"]
+show_behind_parent = true
+margin_right = 84.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 132 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HideTimer" type="Timer" parent="ActiveCustomer/CanvasLayer/ItemBubble"]
 wait_time = 2.0
 one_shot = true
 
@@ -1264,9 +1196,34 @@ position = Vector2( 264.107, 569.211 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 0
 item_count = 4
+
+[node name="Queue" type="Node2D" parent="."]
+position = Vector2( 741.39, 575.776 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="QueuingCustomer2" parent="Queue" instance=ExtResource( 10 )]
+position = Vector2( 16, -16 )
+
+[node name="QueuingCustomer3" parent="Queue" instance=ExtResource( 10 )]
+position = Vector2( 32, -16 )
+
+[node name="QueuingCustomer4" parent="Queue" instance=ExtResource( 10 )]
+position = Vector2( 48, -16 )
+
+[node name="QueuingCustomer5" parent="Queue" instance=ExtResource( 10 )]
+position = Vector2( 64, -16 )
+
+[node name="QueuingCustomer6" parent="Queue" instance=ExtResource( 10 )]
+position = Vector2( 80, -16 )
 [connection signal="animation_finished" from="Player/PlayerSprite" to="Player" method="_on_PlayerSprite_animation_finished"]
 [connection signal="timeout" from="Player/GrabTimer" to="Player" method="_on_GrabTimer_timeout"]
-[connection signal="area_entered" from="Customer" to="Customer" method="_on_Customer_area_entered"]
-[connection signal="body_entered" from="Customer" to="Customer" method="_on_Customer_body_entered"]
-[connection signal="takes_item" from="Customer" to="Player" method="_on_Customer_takes_item"]
-[connection signal="timeout" from="Customer/CanvasLayer/SpeechBubble/HideTimer" to="Customer" method="_on_HideTimer_timeout"]
+[connection signal="area_entered" from="ActiveCustomer" to="ActiveCustomer" method="_on_Customer_area_entered"]
+[connection signal="body_entered" from="ActiveCustomer" to="ActiveCustomer" method="_on_Customer_body_entered"]
+[connection signal="takes_item" from="ActiveCustomer" to="Player" method="_on_Customer_takes_item"]
+[connection signal="takes_item" from="ActiveCustomer" to="Queue" method="_on_ActiveCustomer_takes_item"]
+[connection signal="timeout" from="ActiveCustomer/CanvasLayer/SpeechBubble/HideTimer" to="ActiveCustomer" method="_on_HideTimer_timeout"]
+[connection signal="timeout" from="ActiveCustomer/CanvasLayer/ItemBubble/HideTimer" to="ActiveCustomer" method="_on_HideTimer_timeout"]
+[connection signal="queued_customer_at_the_desk" from="Queue" to="ActiveCustomer" method="_on_queued_customer_at_the_desk"]

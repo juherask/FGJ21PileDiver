@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 ItemInfo="*res://scripts/ItemInfo.gd"
+Rn="*res://scripts/Rn.gd"
 
 [display]
 

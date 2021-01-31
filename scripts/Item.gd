@@ -5,6 +5,8 @@ export(ItemInfo.ItemType) var item_type = ItemInfo.ItemType.BABY
 export(Color) var item_color = Color.aqua
 export var unique_item_id = 0
 
+var is_item = true
+
 const GRAB_DISTANCE = 50
 
 signal item_grabbed

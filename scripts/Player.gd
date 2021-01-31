@@ -18,6 +18,7 @@ var velocity = Vector2()
 var was_on_floor = false
 var jump_strength = 0.0
 var can_throw = false
+var is_player = true
 
 # This is kept in case it is added back to the tree
 #  remember to set it visible
