@@ -1,9 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Queue.gd" type="Script" id=1]
-[ext_resource path="res://scripts/QueuingCustomer.gd" type="Script" id=2]
 [ext_resource path="res://scenes/QueuingCustomer.tscn" type="PackedScene" id=3]
-
 
 [node name="Queue" type="Node2D"]
 position = Vector2( 741.39, 575.776 )
@@ -12,37 +10,32 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="QueuingCustomer2" type="Node2D" parent="." instance=ExtResource( 3 )]
+[node name="QueuingCustomer2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 16, -16 )
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="QueuingCustomer3" type="Node2D" parent="." instance=ExtResource( 3 )]
+[node name="QueuingCustomer3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 32, -16 )
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="QueuingCustomer4" type="Node2D" parent="." instance=ExtResource( 3 )]
+[node name="QueuingCustomer4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 48, -16 )
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="QueuingCustomer5" type="Node2D" parent="." instance=ExtResource( 3 )]
+[node name="QueuingCustomer5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 64, -16 )
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="QueuingCustomer6" type="Node2D" parent="." instance=ExtResource( 3 )]
+[node name="QueuingCustomer6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 80, -16 )
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
+
+[node name="QueuingCustomer7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 96, -16 )
+
+[node name="QueuingCustomer8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 112, -16 )
+
+[node name="QueuingCustomer9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 128, -16 )
+
+[node name="QueuingCustomer10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 144, -16 )
+
+[node name="QueuingCustomer11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 160, -16 )
