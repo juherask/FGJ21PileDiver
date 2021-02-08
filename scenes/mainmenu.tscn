@@ -52,7 +52,7 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_constants/shadow_offset_x = 0
 text = "Credits:
-Programming: Jussi Rausku
+Programming: Jussi Rasku
 Graphics: Panu Weckman"
 valign = 2
 __meta__ = {

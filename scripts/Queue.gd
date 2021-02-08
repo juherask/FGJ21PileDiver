@@ -25,10 +25,7 @@ func _update_leftmost_customer():
 			leftmost_x = customer.position.x
 		customer.active_sprite.play("walk")
 
-func _process(delta):
-	if leftmost_customer==null:
-		return
-		
+func _process(delta):		
 	if leaving_customer!=null:
 		if leaving_customer.position.x < distance_to_the_door:
 			leaving_customer.position.x+=queue_move_speed
@@ -36,7 +33,8 @@ func _process(delta):
 			remove_child(leaving_customer)
 			leaving_customer.queue_free()
 			leaving_customer = null
-		
+	if leftmost_customer==null:
+		return
 		
 	if leftmost_customer.position.x > 0:
 		for customer in get_children():
@@ -57,6 +55,7 @@ func _on_ActiveCustomer_takes_item(item):
 	
 	if leftmost_customer==null:
 		get_node("/root/World/Player/TheEndLabel").visible = true
+		return
 	
 	leaving_customer = leftmost_customer
 	leaving_customer.active_sprite.flip_h = false

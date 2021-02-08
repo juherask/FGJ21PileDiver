@@ -6,7 +6,12 @@ export(Color) var requested_item_color = Color.transparent # see ItemInfo for va
 signal adds_score
 signal takes_item
 
+var customer_at_the_counter = false
+
 func _on_Customer_item_entered(potential_item):
+	if not customer_at_the_counter:
+		return
+		
 	if "item_type" in potential_item and \
 	   "item_color" in potential_item:
 		
@@ -21,6 +26,7 @@ func _on_Customer_item_entered(potential_item):
 			
 			var world_tree_idx = get_parent().remove_child(potential_item)
 			emit_signal("takes_item", potential_item)
+			customer_at_the_counter = false
 			
 			$CanvasLayer/SpeechBubble.visible = true
 			$CanvasLayer/SpeechBubble/HideTimer.start()
@@ -47,6 +53,8 @@ func _on_HideTimer_timeout():
 	$CanvasLayer/ItemBubble.visible = false
 
 func _on_queued_customer_at_the_desk():
+	customer_at_the_counter = true
+	
 	# Get all items in the game (also from unopened boxes)
 	var available_item_colors = []
 	var available_item_types = []
@@ -77,8 +85,3 @@ func _on_queued_customer_at_the_desk():
 		ItemInfo.ALLOWED_COLOR_NAMES[color_idx]+\
 		ItemInfo.ITEM_NAMES[int(requested_item_type)]
 	$CanvasLayer/SpeechBubble/HideTimer.start()
-	
-
-
-func _on_Queue_queued_customer_at_the_desk():
-	pass # Replace with function body.
