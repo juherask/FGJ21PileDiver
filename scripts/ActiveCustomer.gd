@@ -7,11 +7,9 @@ signal adds_score
 signal show_score
 signal takes_item
 
-<<<<<<< HEAD
+
 var firstTime = true
-=======
 var customer_at_the_counter = false
->>>>>>> 544ecab54278a05223ef5dd524ead2a3f5edfc71
 
 func _on_Customer_item_entered(potential_item):
 	if not customer_at_the_counter:
@@ -33,12 +31,9 @@ func _on_Customer_item_entered(potential_item):
 			
 			var world_tree_idx = get_parent().remove_child(potential_item)
 			emit_signal("takes_item", potential_item)
-<<<<<<< HEAD
 			firstTime = true
-=======
 			customer_at_the_counter = false
 			
->>>>>>> 544ecab54278a05223ef5dd524ead2a3f5edfc71
 			$CanvasLayer/SpeechBubble.visible = true
 			$CanvasLayer/SpeechBubble/HideTimer.start()
 		else:			
@@ -59,9 +54,6 @@ func _on_Customer_item_entered(potential_item):
 				$CanvasLayer/ItemBubble/VBoxContainer/Label.text = \
 					ItemInfo.ALLOWED_COLOR_NAMES[color_idx] +\
 					ItemInfo.ITEM_NAMES[requested_item_type]
-
-
-
 				
 
 func _on_Customer_area_entered(area):
@@ -117,11 +109,8 @@ func _on_queued_customer_at_the_desk():
 		ItemInfo.ITEM_NAMES[int(requested_item_type)]
 			
 	$CanvasLayer/SpeechBubble/HideTimer.start()
-<<<<<<< HEAD
 	if	$CanvasLayer/WaitTimer.time_left <= 0:
 		$CanvasLayer/WaitTimer.start()
 
 func _on_Queue_queued_customer_at_the_desk():
 	pass # Replace with function body.
-=======
->>>>>>> 544ecab54278a05223ef5dd524ead2a3f5edfc71
