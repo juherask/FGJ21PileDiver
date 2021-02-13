@@ -11,6 +11,7 @@ func _ready():
 			alt_sprites.append(child)
 			child.visible = false
 			
+	Rn.G.randomize()
 	var selected_sprite_idx = Rn.G.randi_range(0, len(alt_sprites)-1)
 	active_sprite = alt_sprites[selected_sprite_idx]
 	active_sprite.visible = true

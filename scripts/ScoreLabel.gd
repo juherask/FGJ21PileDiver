@@ -7,6 +7,5 @@ var score = 0
 func _process(_delta):
 	text = "%05d"%score
 
-
-func _on_Customer_adds_score(value):
+func _on_ActiveCustomer_adds_score(value):
 	score += value

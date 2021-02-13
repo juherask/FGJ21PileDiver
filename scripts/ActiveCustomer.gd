@@ -4,27 +4,42 @@ export(ItemInfo.ItemType) var requested_item_type = ItemInfo.ItemType.NONE
 export(Color) var requested_item_color = Color.transparent # see ItemInfo for valid colors
 
 signal adds_score
+signal show_score
 signal takes_item
+
+var firstTime = true
 
 func _on_Customer_item_entered(potential_item):
 	if "item_type" in potential_item and \
 	   "item_color" in potential_item:
 		
+		var score = 100;
 		if potential_item.item_type == requested_item_type and \
 		   potential_item.item_color == requested_item_color:
 
 			# Right item. Client is happy
 			# TODO: Play a chime
-
-
-			emit_signal("adds_score", 100)
+			
+			score = $CanvasLayer/WaitTimer.time_left;
+			emit_signal("adds_score", score)
+			$CanvasLayer/WaitTimer.stop()
 			
 			var world_tree_idx = get_parent().remove_child(potential_item)
 			emit_signal("takes_item", potential_item)
-			
+			firstTime = true
 			$CanvasLayer/SpeechBubble.visible = true
 			$CanvasLayer/SpeechBubble/HideTimer.start()
-		else:
+		else:			
+			if $CanvasLayer/SpeechBubble/HideTimer.time_left > 0:
+				yield($CanvasLayer/SpeechBubble/HideTimer, "timeout")
+			if $CanvasLayer/ItemBubble/HideTimer.time_left > 0:
+				yield($CanvasLayer/ItemBubble/HideTimer,"timeout")
+				
+			if firstTime == false:
+				score -= 10
+				emit_signal("show_score", -10)
+				emit_signal("adds_score", -10)
+			firstTime = false
 			var color_idx = ItemInfo.ALLOWED_ITEM_COLORS.find(requested_item_color)
 			if color_idx>=0:
 				$CanvasLayer/ItemBubble.visible = true
@@ -32,6 +47,9 @@ func _on_Customer_item_entered(potential_item):
 				$CanvasLayer/ItemBubble/VBoxContainer/Label.text = \
 					ItemInfo.ALLOWED_COLOR_NAMES[color_idx] +\
 					ItemInfo.ITEM_NAMES[requested_item_type]
+
+
+
 				
 
 func _on_Customer_area_entered(area):
@@ -62,6 +80,7 @@ func _on_queued_customer_at_the_desk():
 			available_item_types.append(potential_box_or_item.item_type)
 	
 	# Choose one
+	Rn.G.randomize()
 	var chosen_item_idx = Rn.G.randi_range(0, len(available_item_colors)-1)
 	if chosen_item_idx==-1:
 		# no more items
@@ -71,14 +90,21 @@ func _on_queued_customer_at_the_desk():
 	requested_item_type = available_item_types[chosen_item_idx]
 	
 	var color_idx = ItemInfo.ALLOWED_ITEM_COLORS.find(requested_item_color)
-	
+
+
+	if $CanvasLayer/SpeechBubble/HideTimer.time_left > 0:
+		yield($CanvasLayer/SpeechBubble/HideTimer, "timeout")
+	if $CanvasLayer/ItemBubble/HideTimer.time_left > 0:
+		yield($CanvasLayer/ItemBubble/HideTimer,"timeout")
+	firstTime = false
 	$CanvasLayer/ItemBubble.visible = true
 	$CanvasLayer/ItemBubble/VBoxContainer/Label.text = \
 		ItemInfo.ALLOWED_COLOR_NAMES[color_idx]+\
 		ItemInfo.ITEM_NAMES[int(requested_item_type)]
+			
 	$CanvasLayer/SpeechBubble/HideTimer.start()
-	
-
+	if	$CanvasLayer/WaitTimer.time_left <= 0:
+		$CanvasLayer/WaitTimer.start()
 
 func _on_Queue_queued_customer_at_the_desk():
 	pass # Replace with function body.

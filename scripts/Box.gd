@@ -111,15 +111,17 @@ func _create_and_launch_item(from_item_texture, used_item_color):
 	)
 	
 	# Randomize the launch strength, spin, and direction
-	
+	Rn.G.randomize()
 	var launch_strength = Rn.G.randf_range(
 		explode_random_velocity_min,
 		explode_random_velocity_max
 	)
+	Rn.G.randomize()
 	var launch_vector = Vector2(0, launch_strength).rotated(
 		deg2rad( Rn.G.randf_range(explode_random_dir_deg_min,
 								 explode_random_dir_deg_max) )
 	)
+	Rn.G.randomize()
 	var launch_spin = Rn.G.randf_range(explode_random_spin_min,
 									  explode_random_spin_max) 
 	item_node.linear_velocity = launch_vector
@@ -136,6 +138,7 @@ func _on_ExplodeTimer_timeout():
 		return
 	
 	var max_tex = min(explode_items_at_a_time_max, len(item_textures))
+	Rn.G.randomize()
 	var explode_this_time = Rn.G.randi_range(1,max_tex)
 	for i in range(explode_this_time):
 		# Instantiate new items based on topmost texture
@@ -144,6 +147,7 @@ func _on_ExplodeTimer_timeout():
 		
 	# Queue up the next stage of the explosion (if there are textures left)
 	if len(item_textures)>0:
+		Rn.G.randomize()
 		$ExplodeTimer.wait_time = Rn.G.randf_range(explode_items_random_delay_min,
 												  explode_items_random_delay_max)
 		$ExplodeTimer.start()

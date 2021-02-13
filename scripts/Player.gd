@@ -59,15 +59,18 @@ func _physics_process(delta):
 		velocity.x = 0.0
 		
 		walk_animation()
-	
+			
 	if is_on_floor():
 		velocity.y = 0
 		was_on_floor = true
 		if Input.is_action_pressed("jump"):
+			was_on_floor = false
 			jump_strength = MAX_JUMP
 			velocity.y -= JUMP_BASE_STRENGTH*jump_strength
 			print("JUMP")
 			jump_strength = 0.0
+		if Input.is_action_pressed("dropDown"):
+			self.position = Vector2(self.position.x, self.position.y + 2)
 		
 	if Input.is_action_just_released("jump"):
 		print("FALL")
@@ -75,6 +78,7 @@ func _physics_process(delta):
 	
 	if !is_on_floor():
 		velocity.y += delta*GRAVITY*FALL_MULTIPLIER
+
 	
 	move_and_slide( velocity*delta, UP, false, 4, 5.0)
 	
@@ -87,6 +91,7 @@ func walk_animation():
 			$PlayerSprite.play("carry")
 		if was_on_floor == false:
 			$PlayerSprite.play("jumpcarry")
+
 	elif $PlayerSprite.animation!="yeet":
 		if velocity.x == 0:
 			$PlayerSprite.play("idle")
@@ -162,7 +167,6 @@ func _on_Customer_takes_item(item):
 
 func _on_GrabTimer_timeout():
 	can_throw = true
-
 
 func _on_PlayerSprite_animation_finished():
 	if $PlayerSprite.animation=="yeet":
