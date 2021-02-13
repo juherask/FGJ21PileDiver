@@ -428,6 +428,7 @@ animations = [ {
 } ]
 
 [node name="QueuingCustomer" type="Node2D"]
+position = Vector2( 0, -15 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
