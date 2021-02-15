@@ -20,8 +20,10 @@ export var explode_random_spin_max = 100
 # The recolored textures for each item in the box is kept here.
 var item_textures = []
 var item_colors = []
+var item_types = []
 var player = null
 var is_box = true
+var recolored_textures = null
 
 static func _recolor_items():
 	var base_texture:Texture = preload("res://sprites/spritesheet_items.png")
@@ -52,16 +54,9 @@ static func _recolor_items():
 
 func _ready():
 	player = get_node("/root/World/Player")
+	recolored_textures = _recolor_items()
 	
-	# initialize item sprite textures (returns a dict keyed by color)
-	var recolored_textures = _recolor_items()
-	var color_key_list = recolored_textures.keys()
-	for i in range(item_count):
-		# Reuse colors as necessary
-		var item_color =  color_key_list[i%len(color_key_list)]
-		var matching_texture = recolored_textures[item_color]
-		item_colors.append( item_color )
-		item_textures.append( matching_texture )
+	fill_box()
 	
 	var label_texture = $LabelSprite.texture
 	$LabelSprite.region_rect = Rect2(
@@ -70,8 +65,32 @@ func _ready():
 		label_texture.get_height(),
 		label_texture.get_height()
 	)
+
+# Note, can be of any type (will be stored in a wrong box!)
+func restock_item(from_item_texture, restocked_item_color, restocked_item_type):
+	# Make sure the box is closed
+	$BoxAnimatedSprite.stop()
+	$BoxAnimatedSprite.frame = 0
+	
+	item_textures.append( from_item_texture )
+	item_colors.append( restocked_item_color )
+	item_types.append( restocked_item_type )
+
+func fill_box():
+	$BoxAnimatedSprite.stop()
+	$BoxAnimatedSprite.frame = 0
+	# initialize item sprite textures (returns a dict keyed by color)
+	var color_key_list = recolored_textures.keys()
+	for i in range(item_count):
+		# Reuse colors as necessary
+		var item_color =  color_key_list[i%len(color_key_list)]
+		var matching_texture = recolored_textures[item_color]
+		item_colors.append( item_color )
+		item_textures.append( matching_texture )
+		item_types.append( item_type )
 		
 func open_box():
+	$BoxAnimatedSprite.play()
 	$ExplodeTimer.start()
 	
 func _input(event):
@@ -88,23 +107,24 @@ func _input(event):
 			$HighlightSprite.visible = true
 			
 			if event is InputEventMouseButton and event.pressed:
-				$BoxAnimatedSprite.play()
 				open_box()
 		else:
 			$HighlightSprite.visible = false
 
 
-func _create_and_launch_item(from_item_texture, used_item_color):
+func _create_and_launch_item(from_item_texture,
+                             lauched_item_color,
+                             lauched_item_type):
 	var item_node = item_scene.instance()
-	item_node.item_type = item_type
-	item_node.item_color = used_item_color
+	item_node.item_type = lauched_item_type
+	item_node.item_color = lauched_item_color
 	
 	var item_sprite = item_node.get_node("ItemSprite")
 	item_sprite.texture = from_item_texture
 	item_sprite.region_enabled = true
 	
 	item_sprite.region_rect = Rect2(
-		from_item_texture.get_height()*(int(item_type)-1),
+		from_item_texture.get_height()*(int(lauched_item_type)-1),
 		0, 
 		from_item_texture.get_height(),
 		from_item_texture.get_height()
@@ -143,7 +163,8 @@ func _on_ExplodeTimer_timeout():
 	for i in range(explode_this_time):
 		# Instantiate new items based on topmost texture
 		_create_and_launch_item( item_textures.pop_front(),
-								 item_colors.pop_front() )
+								 item_colors.pop_front(),
+								 item_types.pop_front() )
 		
 	# Queue up the next stage of the explosion (if there are textures left)
 	if len(item_textures)>0:

@@ -2,6 +2,7 @@ extends Area2D
 
 export(ItemInfo.ItemType) var requested_item_type = ItemInfo.ItemType.NONE
 export(Color) var requested_item_color = Color.transparent # see ItemInfo for valid colors
+export var restock_boxes_count = 2
 
 signal adds_score
 signal show_score
@@ -71,11 +72,16 @@ func _on_HideTimer_timeout():
 func _on_queued_customer_at_the_desk():
 	customer_at_the_counter = true
 	
+	Rn.G.randomize()
+	
 	# Get all items in the game (also from unopened boxes)
 	var available_item_colors = []
 	var available_item_types = []
+	var all_boxes = []
+	
 	for potential_box_or_item in get_parent().get_children():
 		if "is_box" in potential_box_or_item:
+			all_boxes.append(potential_box_or_item)
 			var boxed_item_type = potential_box_or_item.item_type
 			for i in range(len(potential_box_or_item.item_colors)):
 				var boxed_item_color = potential_box_or_item.item_colors[i]
@@ -85,13 +91,33 @@ func _on_queued_customer_at_the_desk():
 			available_item_colors.append(potential_box_or_item.item_color)
 			available_item_types.append(potential_box_or_item.item_type)
 	
+	if len(available_item_colors)==0 and len(all_boxes)>0:
+		# Ohnoes. All items have been found their owner.
+		# -> Reset some boxes in random.
+		for restock in range(restock_boxes_count):
+			if len(all_boxes)==0:
+				break
+				
+			var chosen_box_idx = Rn.G.randi_range(0, len(all_boxes)-1)
+			var chosen_box = all_boxes[chosen_box_idx]
+			# Do not select twice.
+			all_boxes.remove(chosen_box_idx)
+			
+			chosen_box.fill_box()
+			var boxed_item_type = chosen_box.item_type
+			
+			# These restocked items are now available for customers
+			for i in range(len(chosen_box.item_colors)):
+				var boxed_item_color = chosen_box.item_colors[i]
+				available_item_colors.append(boxed_item_color)
+				available_item_types.append(boxed_item_type)
+	
 	# Choose one
-	Rn.G.randomize()
-	var chosen_item_idx = Rn.G.randi_range(0, len(available_item_colors)-1)
-	if chosen_item_idx==-1:
+	if len(available_item_colors)==0:
 		# no more items
 		requested_item_color = Color.gray # should not be allowed
-		
+	
+	var chosen_item_idx = Rn.G.randi_range(0, len(available_item_colors)-1)
 	requested_item_color = available_item_colors[chosen_item_idx]
 	requested_item_type = available_item_types[chosen_item_idx]
 	
@@ -111,6 +137,3 @@ func _on_queued_customer_at_the_desk():
 	$CanvasLayer/SpeechBubble/HideTimer.start()
 	if	$CanvasLayer/WaitTimer.time_left <= 0:
 		$CanvasLayer/WaitTimer.start()
-
-func _on_Queue_queued_customer_at_the_desk():
-	pass # Replace with function body.
