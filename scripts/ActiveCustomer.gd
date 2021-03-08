@@ -55,7 +55,6 @@ func _on_Customer_item_entered(potential_item):
 				$CanvasLayer/ItemBubble/VBoxContainer/Label.text = \
 					ItemInfo.ALLOWED_COLOR_NAMES[color_idx] +\
 					ItemInfo.ITEM_NAMES[requested_item_type]
-				
 
 func _on_Customer_area_entered(area):
 	# Check for carried item

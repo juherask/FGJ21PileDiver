@@ -29,7 +29,7 @@ func _process(delta):
 			return
 		var chosen_box_idx = Rn.G.randi_range(0, len(all_boxes)-1)
 		all_boxes[chosen_box_idx].restock_item($ItemSprite.texture,
-		                                       item_color, item_type)
+											   item_color, item_type)
 		
 		# it has been restocked to random box
 		get_parent().remove_child(self)

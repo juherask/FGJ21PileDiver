@@ -113,8 +113,8 @@ func _input(event):
 
 
 func _create_and_launch_item(from_item_texture,
-                             lauched_item_color,
-                             lauched_item_type):
+							 lauched_item_color,
+							 lauched_item_type):
 	var item_node = item_scene.instance()
 	item_node.item_type = lauched_item_type
 	item_node.item_color = lauched_item_color
