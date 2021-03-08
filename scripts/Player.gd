@@ -25,8 +25,6 @@ var is_player = true
 var carried_tree_item:RigidBody2D = null
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 	
 func _physics_process(delta):
 	
