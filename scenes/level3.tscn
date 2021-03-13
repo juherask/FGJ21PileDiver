@@ -953,83 +953,83 @@ region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=78]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 32, 32, 32 )
+region = Rect2( 64, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=79]
 atlas = ExtResource( 6 )
-region = Rect2( 96, 32, 32, 32 )
+region = Rect2( 96, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=80]
 atlas = ExtResource( 6 )
-region = Rect2( 128, 32, 32, 32 )
+region = Rect2( 128, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=81]
 atlas = ExtResource( 6 )
-region = Rect2( 160, 32, 32, 32 )
+region = Rect2( 160, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=82]
 atlas = ExtResource( 6 )
-region = Rect2( 192, 32, 32, 32 )
+region = Rect2( 192, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=83]
 atlas = ExtResource( 6 )
-region = Rect2( 224, 32, 32, 32 )
+region = Rect2( 224, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=84]
 atlas = ExtResource( 6 )
-region = Rect2( 256, 32, 32, 32 )
+region = Rect2( 256, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=85]
 atlas = ExtResource( 6 )
-region = Rect2( 288, 32, 32, 32 )
+region = Rect2( 288, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=86]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 32, 32, 32 )
+region = Rect2( 32, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=87]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 32, 32, 32 )
+region = Rect2( 0, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=88]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 128, 32, 32 )
+region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=89]
 atlas = ExtResource( 6 )
-region = Rect2( 96, 128, 32, 32 )
+region = Rect2( 96, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=90]
 atlas = ExtResource( 6 )
-region = Rect2( 128, 128, 32, 32 )
+region = Rect2( 128, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=91]
 atlas = ExtResource( 6 )
-region = Rect2( 160, 128, 32, 32 )
+region = Rect2( 160, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=92]
 atlas = ExtResource( 6 )
-region = Rect2( 192, 128, 32, 32 )
+region = Rect2( 192, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=93]
 atlas = ExtResource( 6 )
-region = Rect2( 224, 128, 32, 32 )
+region = Rect2( 224, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=94]
 atlas = ExtResource( 6 )
-region = Rect2( 256, 128, 32, 32 )
+region = Rect2( 256, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=95]
 atlas = ExtResource( 6 )
-region = Rect2( 288, 128, 32, 32 )
+region = Rect2( 288, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=96]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 128, 32, 32 )
+region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=97]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 128, 32, 32 )
+region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=98]
 atlas = ExtResource( 6 )
@@ -1045,55 +1045,55 @@ region = Rect2( 64, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=101]
 atlas = ExtResource( 6 )
-region = Rect2( 128, 64, 32, 32 )
+region = Rect2( 0, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=102]
 atlas = ExtResource( 6 )
-region = Rect2( 160, 64, 32, 32 )
+region = Rect2( 32, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=103]
 atlas = ExtResource( 6 )
-region = Rect2( 192, 64, 32, 32 )
+region = Rect2( 64, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=104]
 atlas = ExtResource( 6 )
-region = Rect2( 224, 64, 32, 32 )
+region = Rect2( 96, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=105]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 128, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=106]
 atlas = ExtResource( 6 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 160, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=107]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 160, 32, 32 )
+region = Rect2( 192, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=108]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 160, 32, 32 )
+region = Rect2( 224, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=109]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 160, 32, 32 )
+region = Rect2( 0, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=110]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 64, 32, 32 )
+region = Rect2( 32, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=111]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 64, 32, 32 )
+region = Rect2( 64, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=112]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 64, 32, 32 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=113]
 atlas = ExtResource( 6 )
-region = Rect2( 96, 64, 32, 32 )
+region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=114]
 animations = [ {
@@ -1104,12 +1104,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ) ],
 "loop": true,
-"name": "walk",
+"name": "carry",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ) ],
 "loop": true,
-"name": "carry",
+"name": "walk",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 98 ), SubResource( 99 ), SubResource( 100 ) ],
@@ -1119,23 +1119,23 @@ animations = [ {
 }, {
 "frames": [ SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ) ],
 "loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ) ],
+"loop": true,
 "name": "jumpcarry",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 105 ), SubResource( 106 ) ],
-"loop": true,
-"name": "idlecarry",
-"speed": 2.0
-}, {
-"frames": [ SubResource( 107 ), SubResource( 108 ), SubResource( 109 ) ],
+"frames": [ SubResource( 109 ), SubResource( 110 ), SubResource( 111 ) ],
 "loop": false,
 "name": "yeet",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 110 ), SubResource( 111 ), SubResource( 112 ), SubResource( 113 ) ],
+"frames": [ SubResource( 112 ), SubResource( 113 ) ],
 "loop": true,
-"name": "jump",
-"speed": 5.0
+"name": "idlecarry",
+"speed": 2.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=115]
@@ -1192,7 +1192,7 @@ tile_set = SubResource( 74 )
 cell_size = Vector2( 16, 16 )
 collision_use_kinematic = true
 format = 1
-tile_data = PoolIntArray( 1245207, 2, 0, 1245208, 2, 0, 1245209, 2, 0, 1245210, 2, 0, 1245211, 2, 1, 1310740, 2, 0, 1310741, 2, 0, 1310742, 2, 0, 1310743, 2, 0, 1310744, 2, 0, 1310745, 2, 0, 1310746, 2, 0, 1310747, 2, 1, 1376275, 2, 0, 1376276, 2, 0, 1376277, 2, 0, 1376278, 2, 0, 1376279, 2, 0, 1376280, 2, 0, 1376281, 2, 0, 1376282, 2, 0, 1376283, 2, 1, 1441810, 2, 0, 1441811, 2, 0, 1441812, 2, 0, 1441813, 2, 0, 1441814, 2, 0, 1441815, 2, 0, 1441816, 2, 0, 1441817, 2, 0, 1441818, 2, 0, 1441819, 2, 1, 1507346, 2, 0, 1507347, 2, 0, 1507348, 2, 0, 1507349, 2, 0, 1507350, 2, 0, 1507351, 2, 0, 1507352, 2, 0, 1507353, 2, 0, 1507354, 2, 0, 1507355, 2, 1, 1572881, 2, 0, 1572882, 2, 0, 1572883, 2, 0, 1572884, 2, 0, 1572885, 2, 0, 1572886, 2, 0, 1572887, 2, 0, 1572888, 2, 0, 1572889, 2, 0, 1572890, 2, 0, 1572891, 2, 1, 1638417, 2, 0, 1638418, 2, 0, 1638419, 2, 0, 1638420, 2, 0, 1638421, 2, 0, 1638422, 2, 0, 1638423, 2, 0, 1638424, 2, 0, 1638425, 2, 0, 1638426, 2, 0, 1638427, 2, 1, 1703952, 2, 0, 1703953, 2, 0, 1703954, 2, 65536, 1703955, 2, 65536, 1703956, 2, 65536, 1703957, 2, 65536, 1703958, 2, 65536, 1703959, 2, 65536, 1703960, 2, 65536, 1703961, 2, 65536, 1703962, 2, 65536, 1703963, 2, 65537, 1769487, 2, 0, 1769488, 2, 0, 1769489, 2, 0, 1835022, 2, 0, 1835023, 2, 0, 1835024, 2, 0, 1835025, 2, 0, 1835056, 3, 1, 1900558, 2, 0, 1900559, 2, 0, 1900560, 2, 0, 1900561, 2, 1, 1900562, 2, 1, 1900592, 3, 1, 1966094, 2, 0, 1966095, 2, 0, 1966096, 2, 0, 1966097, 2, 1, 1966098, 2, 1, 1966128, 3, 1, 2031630, 2, 0, 2031631, 2, 0, 2031632, 2, 0, 2031633, 2, 1, 2031634, 2, 1, 2031664, 3, 1, 2097166, 2, 0, 2097167, 2, 0, 2097168, 2, 0, 2097169, 2, 0, 2097170, 2, 1, 2097171, 2, 1, 2097173, 2, 1, 2097200, 3, 1, 2162702, 2, 0, 2162703, 2, 0, 2162704, 2, 0, 2162705, 2, 0, 2162706, 2, 0, 2162707, 2, 0, 2162708, 2, 0, 2162709, 2, 1, 2162720, 4, 0, 2162721, 4, 1, 2162736, 3, 1, 2228238, 2, 0, 2228239, 2, 0, 2228240, 2, 0, 2228241, 2, 0, 2228242, 2, 0, 2228243, 2, 0, 2228244, 2, 0, 2228245, 2, 1, 2228256, 4, 65536, 2228257, 4, 65537, 2228272, 3, 1, 2293774, 2, 0, 2293775, 2, 0, 2293776, 2, 0, 2293777, 2, 65536, 2293778, 2, 65536, 2293779, 2, 65536, 2293780, 2, 65536, 2293781, 2, 65537, 2293805, 1, 0, 2293808, 3, 1, 2359310, 2, 0, 2359311, 2, 0, 2359312, 2, 1, 2359344, 3, 1, 2424846, 2, 0, 2424847, 2, 0, 2424848, 2, 1, 2490382, 2, 0, 2490383, 2, 0, 2490384, 2, 1, 2555918, 2, 0, 2555919, 2, 0, 2555920, 2, 1, 2621454, 2, 0, 2621455, 2, 0, 2621456, 2, 1, 2686990, 2, 0, 2686991, 2, 0, 2686992, 2, 1, 2752526, 2, 0, 2752527, 2, 0, 2752528, 2, 1, 2818062, 2, 65536, 2818063, 2, 65536, 2818064, 2, 65537 )
+tile_data = PoolIntArray( 1245207, 2, 0, 1245208, 2, 0, 1245209, 2, 0, 1245210, 2, 0, 1245211, 2, 1, 1310740, 2, 0, 1310741, 2, 0, 1310742, 2, 0, 1310743, 2, 0, 1310744, 2, 0, 1310745, 2, 0, 1310746, 2, 0, 1310747, 2, 1, 1376275, 2, 0, 1376276, 2, 0, 1376277, 2, 0, 1376278, 2, 0, 1376279, 2, 0, 1376280, 2, 0, 1376281, 2, 0, 1376282, 2, 0, 1376283, 2, 1, 1441810, 2, 0, 1441811, 2, 0, 1441812, 2, 0, 1441813, 2, 0, 1441814, 2, 0, 1441815, 2, 0, 1441816, 2, 0, 1441817, 2, 0, 1441818, 2, 0, 1441819, 2, 1, 1507346, 2, 0, 1507347, 2, 0, 1507348, 2, 0, 1507349, 2, 0, 1507350, 2, 0, 1507351, 2, 0, 1507352, 2, 0, 1507353, 2, 0, 1507354, 2, 0, 1507355, 2, 1, 1572882, 2, 0, 1572883, 2, 0, 1572884, 2, 0, 1572885, 2, 0, 1572886, 2, 0, 1572887, 2, 0, 1572888, 2, 0, 1572889, 2, 0, 1572890, 2, 0, 1572891, 2, 1, 1638418, 2, 0, 1638419, 2, 0, 1638420, 2, 0, 1638421, 2, 0, 1638422, 2, 0, 1638423, 2, 0, 1638424, 2, 0, 1638425, 2, 0, 1638426, 2, 0, 1638427, 2, 1, 1703954, 2, 65536, 1703955, 2, 65536, 1703956, 2, 65536, 1703957, 2, 65536, 1703958, 2, 65536, 1703959, 2, 65536, 1703960, 2, 65536, 1703961, 2, 65536, 1703962, 2, 65536, 1703963, 2, 65537, 1769479, 2, 0, 1769480, 2, 1, 1835015, 2, 0, 1835016, 2, 1, 1835019, 0, 3, 1835020, 0, 1, 1835021, 0, 1, 1835022, 0, 1, 1835023, 0, 1, 1835024, 0, 1, 1835025, 0, 4, 1835056, 3, 1, 1900551, 2, 0, 1900552, 2, 1, 1900592, 3, 1, 1966087, 2, 0, 1966088, 2, 1, 1966102, 4, 2, 1966103, 4, 3, 1966128, 3, 1, 2031623, 2, 0, 2031624, 2, 1, 2031638, 4, 65538, 2031639, 4, 65539, 2031664, 3, 1, 2097159, 2, 0, 2097160, 2, 1, 2097171, 2, 1, 2097172, 0, 3, 2097173, 0, 4, 2097200, 3, 1, 2162695, 2, 0, 2162696, 2, 1, 2162708, 0, 3, 2162709, 0, 4, 2162720, 4, 0, 2162721, 4, 1, 2162736, 3, 1, 2228231, 2, 0, 2228232, 2, 1, 2228244, 0, 3, 2228245, 0, 4, 2228256, 4, 65536, 2228257, 4, 65537, 2228272, 3, 1, 2293767, 2, 0, 2293768, 2, 1, 2293780, 0, 3, 2293781, 0, 4, 2293805, 1, 0, 2293808, 3, 1, 2359303, 2, 0, 2359304, 2, 1, 2359312, 0, 4, 2359344, 3, 1, 2424839, 2, 0, 2424840, 2, 1, 2424847, 0, 3, 2424848, 0, 4, 2490375, 2, 0, 2490376, 2, 1, 2490383, 0, 3, 2490384, 0, 4, 2555911, 2, 0, 2555912, 2, 1, 2555919, 0, 3, 2555920, 0, 4, 2621447, 2, 0, 2621448, 2, 1, 2621455, 0, 3, 2621456, 0, 4, 2686983, 2, 0, 2686984, 2, 1, 2686991, 0, 3, 2686992, 0, 4, 2752519, 2, 0, 2752520, 2, 1, 2752527, 0, 3, 2752528, 0, 4, 2818055, 2, 65536, 2818056, 2, 65536, 2818057, 2, 65537, 2818063, 0, 3, 2818064, 0, 4 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 561.349, 559.312 )
@@ -1417,59 +1417,59 @@ wait_time = 120.0
 one_shot = true
 
 [node name="Box" parent="." instance=ExtResource( 11 )]
-position = Vector2( 311.244, 342.903 )
+position = Vector2( 151.674, 695.005 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 0
 item_type = 1
 item_count = 15
 
 [node name="Box2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 230.486, 677.948 )
+position = Vector2( 135.343, 646.484 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 0
 item_type = 2
 item_count = 15
 
 [node name="Box3" parent="." instance=ExtResource( 11 )]
-position = Vector2( 229.819, 632.563 )
+position = Vector2( 136.175, 599.6 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 0
 item_type = 3
 item_count = 15
 
 [node name="Box4" parent="." instance=ExtResource( 11 )]
-position = Vector2( 230.486, 567.823 )
+position = Vector2( 136.093, 534.86 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 0
 item_type = 4
 item_count = 15
 
 [node name="Box5" parent="." instance=ExtResource( 11 )]
-position = Vector2( 231.821, 503.751 )
+position = Vector2( 135.929, 486.52 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 0
 item_type = 5
 item_count = 15
 
 [node name="Box6" parent="." instance=ExtResource( 11 )]
-position = Vector2( 245.837, 441.014 )
+position = Vector2( 118.635, 517.935 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 0
 item_type = 6
 item_count = 15
 
 [node name="Box7" parent="." instance=ExtResource( 11 )]
-position = Vector2( 281.21, 391.625 )
+position = Vector2( 119.534, 581.99 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 0
 item_type = 7
 item_count = 15
 
 [node name="Box8" parent="." instance=ExtResource( 11 )]
-position = Vector2( 374.649, 311.534 )
+position = Vector2( 439.874, 312.335 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 0
-item_count = 15
+item_count = 30
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
@@ -1523,17 +1523,17 @@ wait_time = 0.001
 [connection signal="timeout" from="Player/GrabTimer" to="Player" method="_on_GrabTimer_timeout"]
 [connection signal="timeout" from="Player/VBoxContainer/ding/DingTimer" to="Player/VBoxContainer/ding" method="_on_DingTimer_timeout"]
 [connection signal="pressed" from="Player/CanvasLayer/NinePatchRect/VBoxContainer/VBoxContainer/Button" to="Player/CanvasLayer/NinePatchRect" method="_on_Button_pressed"]
-[connection signal="adds_score" from="ActiveCustomer" to="Player/VBoxContainer/ding" method="_on_ActiveCustomer_adds_score"]
 [connection signal="adds_score" from="ActiveCustomer" to="NinePatchRect/VBoxContainer/ScoreLabel" method="_on_ActiveCustomer_adds_score"]
+[connection signal="adds_score" from="ActiveCustomer" to="Player/VBoxContainer/ding" method="_on_ActiveCustomer_adds_score"]
 [connection signal="area_entered" from="ActiveCustomer" to="ActiveCustomer" method="_on_Customer_area_entered"]
 [connection signal="body_entered" from="ActiveCustomer" to="ActiveCustomer" method="_on_Customer_body_entered"]
 [connection signal="show_score" from="ActiveCustomer" to="Player/VBoxContainer/ding" method="_on_ActiveCustomer_show_score"]
-[connection signal="takes_item" from="ActiveCustomer" to="Queue" method="_on_ActiveCustomer_takes_item"]
 [connection signal="takes_item" from="ActiveCustomer" to="Player" method="_on_Customer_takes_item"]
+[connection signal="takes_item" from="ActiveCustomer" to="Queue" method="_on_ActiveCustomer_takes_item"]
 [connection signal="timeout" from="ActiveCustomer/CanvasLayer/ItemBubble/HideTimer" to="ActiveCustomer" method="_on_HideTimer_timeout"]
 [connection signal="timeout" from="ActiveCustomer/CanvasLayer/SpeechBubble/HideTimer" to="ActiveCustomer" method="_on_HideTimer_timeout"]
 [connection signal="timeout" from="ActiveCustomer/CanvasLayer/WaitTimer" to="ActiveCustomer" method="_on_HideTimer_timeout"]
-[connection signal="no_customers_left" from="Queue" to="." method="_on_Queue_no_customers_left"]
 [connection signal="no_customers_left" from="Queue" to="Player/CanvasLayer/NinePatchRect/VBoxContainer/TheEndLabel" method="_on_Queue_no_customers_left"]
+[connection signal="no_customers_left" from="Queue" to="." method="_on_Queue_no_customers_left"]
 [connection signal="queued_customer_at_the_desk" from="Queue" to="ActiveCustomer" method="_on_queued_customer_at_the_desk"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

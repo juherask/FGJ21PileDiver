@@ -30,7 +30,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("jump"):
 		jump_strength = MAX_JUMP
-		print("START")
+		#print("START")
 	
 	if Input.is_action_pressed("left"):
 		if velocity.x > -max_walk_speed:
@@ -42,43 +42,39 @@ func _physics_process(delta):
 		velocity.x -= velocity.x/abs(velocity.x)*FLOOR_FRICTION*delta
 		
 	if velocity.x<-200.0:
-		$PlayerSprite.flip_h = true
-		
+		$PlayerSprite.flip_h = true		
 		walk_animation()
 			
 		$CarriedItem.position.x = -abs($CarriedItem.position.x)
 	elif velocity.x>200.0:
-		$PlayerSprite.flip_h = false
-		
+		$PlayerSprite.flip_h = false		
 		walk_animation()
 		
 		$CarriedItem.position.x = abs($CarriedItem.position.x)
 	else:
-		velocity.x = 0.0
-		
+		velocity.x = 0.0		
 		walk_animation()
-			
+
+	move_and_slide( velocity*delta, UP, false, 4, 0)
+		
+	if !is_on_floor():
+		velocity.y += delta*GRAVITY*FALL_MULTIPLIER
+		
 	if is_on_floor():
+		#is_on_floor is true if touching wall or ceiling
 		velocity.y = 0
 		was_on_floor = true
 		if Input.is_action_pressed("jump"):
 			was_on_floor = false
 			jump_strength = MAX_JUMP
 			velocity.y -= JUMP_BASE_STRENGTH*jump_strength
-			print("JUMP")
 			jump_strength = 0.0
 		if Input.is_action_pressed("dropDown"):
 			self.position = Vector2(self.position.x, self.position.y + 2)
 		
 	if Input.is_action_just_released("jump"):
-		print("FALL")
 		velocity.y += delta*GRAVITY*JUMP_MULTIPLIER
 	
-	if !is_on_floor():
-		velocity.y += delta*GRAVITY*FALL_MULTIPLIER
-
-	
-	move_and_slide( velocity*delta, UP, false, 4, 5.0)
 	
 
 func walk_animation():

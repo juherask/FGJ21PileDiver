@@ -1,5 +1,5 @@
 extends Node
-enum ItemType{NONE, KEYS, MITTENS, HAT, SOCKS, WALLET, SCARF, PHONE, BABY, VEGETABLE}
+enum ItemType{NONE, KEYS, MITTENS, HAT, SOCKS, WALLET, SCARF, PHONE, BABY}
 const ITEM_NAMES = [
 	"thingamabob",
 	"key",
@@ -10,7 +10,6 @@ const ITEM_NAMES = [
 	"scarf",
 	"phone",
 	"baby",
-	"vegetable",
 ]
 
 const ALLOWED_ITEM_COLORS = [
@@ -19,15 +18,19 @@ const ALLOWED_ITEM_COLORS = [
 	Color.lime,
 	Color.blueviolet,
 	Color.coral,
-	Color.brown]
+	Color.chocolate,
+	Color.red,
+	Color.yellow]
 	
 const ALLOWED_COLOR_NAMES = [
-	"An blue ", 
+	"A blue ", 
 	"A pink ",
 	"A green ",
 	"A violet ",
 	"A orange ",
-	"A brown "]
+	"A brown ",
+	"A red ",
+	"A yellow "]
 
 const SPRITE_RECOLOR_LIGHT = Color("#E392FE")
 const SPRITE_RECOLOR_BASE = Color("#D357FE")

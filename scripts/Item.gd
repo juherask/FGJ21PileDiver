@@ -16,7 +16,7 @@ signal item_grabbed
 func _ready():
 	unique_item_id = get_instance_id()
 
-func _process(delta):
+func _process(delta):	
 	if abs(position.y) > OUT_OF_BOUNDS_Y:
 		Rn.G.randomize()
 		

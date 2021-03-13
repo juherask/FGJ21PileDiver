@@ -39,11 +39,11 @@ static func _recolor_items():
 			for x in base_texture.get_width():
 				var pixelc = texture_image.get_pixel(x,y)
 				if pixelc==ItemInfo.SPRITE_RECOLOR_LIGHT:
-					texture_image.set_pixel(x,y,color.lightened(0.2))
+					texture_image.set_pixel(x,y,color.lightened(0.3))
 				elif pixelc==ItemInfo.SPRITE_RECOLOR_BASE:
 					texture_image.set_pixel(x,y,color)
 				elif pixelc==ItemInfo.SPRITE_RECOLOR_SHADOW:
-					texture_image.set_pixel(x,y,color.darkened(0.2))
+					texture_image.set_pixel(x,y,color.darkened(0.4))
 		texture_image.unlock()
 		
 		var modified_texture = ImageTexture.new()
