@@ -30,13 +30,25 @@ func _on_Customer_item_entered(potential_item):
 			emit_signal("adds_score", score)
 			$CanvasLayer/WaitTimer.stop()
 			
-			var world_tree_idx = get_parent().remove_child(potential_item)
+			var world_tree_idx = get_parent().remove_child(potential_item)			
+			
+			var thanks = ["Thank you son", "Thanks", "Thank you sir", "I've been looking this for so long! Thank you!", "I thought I lost this forever!"]
+
+			$CanvasLayer/SpeechBubble/VBoxContainer/Label.text = thanks[randi() % thanks.size()]
+			$CanvasLayer/SpeechBubble.visible = true
+			$CanvasLayer/SpeechBubble/HideTimer.start()
+			
+			var t = Timer.new()
+			t.set_wait_time(1)
+			t.set_one_shot(true)
+			self.add_child(t)
+			t.start()
+			yield(t, "timeout")
+			
 			emit_signal("takes_item", potential_item)
 			firstTime = true
 			customer_at_the_counter = false
 			
-			$CanvasLayer/SpeechBubble.visible = true
-			$CanvasLayer/SpeechBubble/HideTimer.start()
 		else:			
 			if $CanvasLayer/SpeechBubble/HideTimer.time_left > 0:
 				yield($CanvasLayer/SpeechBubble/HideTimer, "timeout")

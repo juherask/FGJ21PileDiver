@@ -437,24 +437,26 @@ __meta__ = {
 [node name="CustomerSpriteWoman" type="AnimatedSprite" parent="."]
 frames = SubResource( 23 )
 animation = "idle"
+frame = 1
 playing = true
 flip_h = true
 
 [node name="CustomerSpriteMan" type="AnimatedSprite" parent="."]
 frames = SubResource( 46 )
 animation = "idle"
+frame = 1
 playing = true
 flip_h = true
 
 [node name="CustomerSpriteBoy" type="AnimatedSprite" parent="."]
 frames = SubResource( 69 )
 animation = "idle"
-frame = 1
 playing = true
 flip_h = true
 
 [node name="CustomerSpriteGirl" type="AnimatedSprite" parent="."]
 frames = SubResource( 92 )
 animation = "idle"
+frame = 1
 playing = true
 flip_h = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=2]
+[gd_scene load_steps=141 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/speechbubble.png" type="Texture" id=2]
@@ -167,6 +167,30 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=46]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
+[sub_resource type="ConvexPolygonShape2D" id=117]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=118]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=119]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=120]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=121]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=122]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=123]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=124]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
 [sub_resource type="ConvexPolygonShape2D" id=47]
 points = PoolVector2Array( 12.1614, 16, 3.84312, 16, 3.84312, 0, 11.9745, 0 )
 
@@ -181,7 +205,7 @@ points = PoolVector2Array( 0.104568, 0.177856, 16, 0, 16, 1.48634, 11.7876, 4.66
 0/texture = ExtResource( 4 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 288, 48 )
+0/region = Rect2( 0, 0, 288, 64 )
 0/tile_mode = 2
 0/autotile/icon_coordinate = Vector2( 0, 0 )
 0/autotile/tile_size = Vector2( 16, 16 )
@@ -466,6 +490,54 @@ points = PoolVector2Array( 0.104568, 0.177856, 16, 0, 16, 1.48634, 11.7876, 4.66
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 46 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 9, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 117 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 9, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 118 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 9, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 119 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 9, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 120 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 12, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 121 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 13, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 122 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 13, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 123 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 12, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 124 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -1267,49 +1339,6 @@ shape = SubResource( 112 )
 [node name="CanvasLayer" type="CanvasLayer" parent="ActiveCustomer"]
 follow_viewport_enable = true
 
-[node name="SpeechBubble" type="NinePatchRect" parent="ActiveCustomer/CanvasLayer"]
-visible = false
-margin_left = 648.0
-margin_top = 490.0
-margin_right = 748.0
-margin_bottom = 546.0
-rect_scale = Vector2( 1.10697, 0.92403 )
-texture = ExtResource( 2 )
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 38
-patch_margin_bottom = 46
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ActiveCustomer/CanvasLayer/SpeechBubble"]
-margin_left = 8.0
-margin_top = 10.0
-margin_right = 92.0
-margin_bottom = 25.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="ActiveCustomer/CanvasLayer/SpeechBubble/VBoxContainer"]
-show_behind_parent = true
-margin_right = 84.0
-margin_bottom = 15.0
-custom_fonts/font = SubResource( 114 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Thank you son"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HideTimer" type="Timer" parent="ActiveCustomer/CanvasLayer/SpeechBubble"]
-one_shot = true
-
 [node name="ItemBubble" type="NinePatchRect" parent="ActiveCustomer/CanvasLayer"]
 visible = false
 margin_left = 648.0
@@ -1353,6 +1382,52 @@ __meta__ = {
 wait_time = 2.0
 one_shot = true
 
+[node name="SpeechBubble" type="NinePatchRect" parent="ActiveCustomer/CanvasLayer"]
+visible = false
+margin_left = 586.0
+margin_top = 466.0
+margin_right = 747.0
+margin_bottom = 548.0
+rect_scale = Vector2( 1.10697, 0.92403 )
+texture = ExtResource( 2 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 38
+patch_margin_bottom = 46
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ActiveCustomer/CanvasLayer/SpeechBubble"]
+margin_left = 8.0
+margin_top = 10.0
+margin_right = 152.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ActiveCustomer/CanvasLayer/SpeechBubble/VBoxContainer"]
+show_behind_parent = true
+margin_right = 144.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 114 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "I've been looking this for so long! Thank you!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HideTimer" type="Timer" parent="ActiveCustomer/CanvasLayer/SpeechBubble"]
+one_shot = true
+
 [node name="WaitTimer" type="Timer" parent="ActiveCustomer/CanvasLayer"]
 wait_time = 120.0
 one_shot = true
@@ -1368,7 +1443,7 @@ item_count = 6
 position = Vector2( 423.371, 535.12 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 0
-item_type = 2
+item_type = 7
 item_count = 5
 
 [node name="Box3" parent="." instance=ExtResource( 11 )]
@@ -1418,11 +1493,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enable = true
-
 [node name="Queue" parent="." instance=ExtResource( 14 )]
-queue_length = 4
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.001
@@ -1435,12 +1506,12 @@ wait_time = 0.001
 [connection signal="area_entered" from="ActiveCustomer" to="ActiveCustomer" method="_on_Customer_area_entered"]
 [connection signal="body_entered" from="ActiveCustomer" to="ActiveCustomer" method="_on_Customer_body_entered"]
 [connection signal="show_score" from="ActiveCustomer" to="Player/VBoxContainer/ding" method="_on_ActiveCustomer_show_score"]
-[connection signal="takes_item" from="ActiveCustomer" to="Player" method="_on_Customer_takes_item"]
 [connection signal="takes_item" from="ActiveCustomer" to="Queue" method="_on_ActiveCustomer_takes_item"]
-[connection signal="timeout" from="ActiveCustomer/CanvasLayer/SpeechBubble/HideTimer" to="ActiveCustomer" method="_on_HideTimer_timeout"]
+[connection signal="takes_item" from="ActiveCustomer" to="Player" method="_on_Customer_takes_item"]
 [connection signal="timeout" from="ActiveCustomer/CanvasLayer/ItemBubble/HideTimer" to="ActiveCustomer" method="_on_HideTimer_timeout"]
+[connection signal="timeout" from="ActiveCustomer/CanvasLayer/SpeechBubble/HideTimer" to="ActiveCustomer" method="_on_HideTimer_timeout"]
 [connection signal="timeout" from="ActiveCustomer/CanvasLayer/WaitTimer" to="ActiveCustomer" method="_on_HideTimer_timeout"]
-[connection signal="no_customers_left" from="Queue" to="Player/CanvasLayer/NinePatchRect/VBoxContainer/TheEndLabel" method="_on_Queue_no_customers_left"]
 [connection signal="no_customers_left" from="Queue" to="." method="_on_Queue_no_customers_left"]
+[connection signal="no_customers_left" from="Queue" to="Player/CanvasLayer/NinePatchRect/VBoxContainer/TheEndLabel" method="_on_Queue_no_customers_left"]
 [connection signal="queued_customer_at_the_desk" from="Queue" to="ActiveCustomer" method="_on_queued_customer_at_the_desk"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -14,5 +14,5 @@ sceneName = "endless"
 text = "Congratulations!
 You are finally at the top! only few can handle these endless rows of customers."
 
-[node name="Queue" parent="." index="10"]
+[node name="Queue" parent="." index="9"]
 queue_length = 3

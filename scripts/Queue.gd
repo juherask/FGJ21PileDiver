@@ -79,8 +79,8 @@ func _process(delta):
 		
 func _on_ActiveCustomer_takes_item(item):
 	if leftmost_customer == null:
-		return # too early for this
-		
+		return # too early for this	
+			
 	is_customer_at_desk = false
 	leaving_customer = leftmost_customer
 	leaving_customer.active_sprite.flip_h = false

@@ -1,5 +1,5 @@
 extends Node
-enum ItemType{NONE, KEYS, MITTENS, HAT, SOCKS, WALLET, SCARF, PHONE, BABY}
+enum ItemType{NONE, KEYS, MITTENS, HAT, SOCKS, WALLET, SCARF, PHONE, BABY, VEGETABLE}
 const ITEM_NAMES = [
 	"thingamabob",
 	"key",
@@ -10,6 +10,7 @@ const ITEM_NAMES = [
 	"scarf",
 	"phone",
 	"baby",
+	"vegetable",
 ]
 
 const ALLOWED_ITEM_COLORS = [
@@ -18,12 +19,12 @@ const ALLOWED_ITEM_COLORS = [
 	Color.lime,
 	Color.blueviolet,
 	Color.coral,
-	Color.chocolate]
+	Color.brown]
 	
 const ALLOWED_COLOR_NAMES = [
-	"An aqua ", 
+	"An blue ", 
 	"A pink ",
-	"A lime ",
+	"A green ",
 	"A violet ",
 	"A orange ",
 	"A brown "]

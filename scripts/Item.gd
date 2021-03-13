@@ -2,7 +2,7 @@ extends RigidBody2D
 
 export(float) var hot_box_scale = 0.75
 export(ItemInfo.ItemType) var item_type = ItemInfo.ItemType.BABY
-export(Color) var item_color = Color.aqua
+export(Color) var item_color = Color.blue
 export var unique_item_id = 0
 
 var is_item = true
